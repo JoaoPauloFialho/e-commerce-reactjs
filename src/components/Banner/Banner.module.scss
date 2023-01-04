@@ -1,0 +1,14 @@
+@import url('./../../styles/_variaveis.css');
+
+.banner{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    img{
+        width: 80vw;
+        box-shadow: 10px 10px 6px var(--cor-primaria);
+    }
+
+}

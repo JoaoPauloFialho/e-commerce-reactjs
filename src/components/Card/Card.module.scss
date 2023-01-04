@@ -1,0 +1,82 @@
+@import url('./../../styles/_variaveis.css');
+
+.card {
+
+    a{
+        text-decoration: none;
+    }
+
+    padding: 1rem;
+    width: 13rem;
+    height: 23rem;
+    align-items: center;
+    background-color: var(--cor-primaria);
+    border-radius: 8px;
+    transition: 0.4s;
+
+    img {
+        margin: auto;
+        width: 70%;
+        height: 40%;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    &__desc {
+        height: 3rem;
+        font-size: 0.8rem;
+        border-top: 1px solid var(--cor-secundaria);
+        width: 100%;
+        color: white;
+        margin-bottom: 2rem;
+        word-wrap: break-word;
+    }
+
+    &__preco {
+        font-size: 1.3rem;
+        width: 100%;
+        font-weight: bold;
+        color: rgb(255, 55, 55);
+        display: inline;
+    }
+
+    &__botao_compra {
+        display: flex;
+        background-color: rgb(255, 55, 55);
+        justify-content: start;
+        align-items: center;
+        transition: 0.4s;
+        border-radius: 8px;
+        cursor: pointer;
+
+        img {
+            margin-top: 1rem;
+            width: 2rem;
+        }
+
+        p{
+            font-size: 1rem;
+            color: white;
+            margin-right: 2rem;
+        }
+    }
+
+    &__botao_compra:hover{
+        background-color: rgb(252, 84, 84);
+        transition: 0.4s;
+    }
+
+    &__botao_compra:active{
+        background-color: rgb(255, 27, 27);
+        transition: 0.4s;
+    }
+
+    &__pix{
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.card:hover{
+    box-shadow: 0.2rem 0.2rem 10px rgb( 4, 4, 4) ;
+}

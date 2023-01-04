@@ -1,0 +1,78 @@
+@import url('./../../styles/_variaveis.css');
+
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        text-decoration: none;
+        user-select: none;
+        color: var(--cor-da-fonte);
+        font-size: 1.2rem;
+        transition: 0.3s;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    p:hover {
+        transition: 0.3s;
+        color: var(--cor-da-fonte-ativa);
+    }
+}
+
+a .logo {
+    width: 17rem;
+    height: 2.8rem;
+}
+
+.nav_cabecalho {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.login_cadastro {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+
+    img {
+        width: 1.25rem;
+    }
+}
+
+.atendimento_ao_cliente {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+
+    img {
+        width: 1.4rem;
+    }
+}
+
+.carrinho_de_compras {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+
+    img {
+        width: 1.8rem;
+    }
+}
+
+.pipe {
+    color: white;
+    font-size: 1.2rem;
+    cursor: default;
+}

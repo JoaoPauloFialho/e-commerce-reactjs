@@ -1,0 +1,17 @@
+.destaques {
+    margin-top: 5rem;
+
+    &__titulo {
+        display: flex;
+        margin: 3rem;
+
+        h2 {
+            font-size: 2rem;
+            color: white;
+        }
+
+        img{
+            width: 5.5rem;
+        }
+    }
+}

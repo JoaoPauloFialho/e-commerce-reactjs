@@ -1,0 +1,66 @@
+@import url('../../styles/_variaveis.css');
+
+.frete_garantia {
+    &__nav {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: space-around;
+
+        &__frete {
+            border-bottom: solid 0.01rem grey;
+            cursor: pointer;
+            width: 100%;
+
+            &__titulo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 0.5rem;
+
+                img {
+                    width: 2.5rem;
+                    height: 1.5rem;
+                }
+
+                h1 {
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        &__frete_ativo {
+            border-bottom: red solid 0.1rem;
+        }
+
+        &__garantia {
+            width: 100%;
+            cursor: pointer;
+            border-bottom: solid 0.01rem grey;
+
+            &__titulo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 0.5rem;
+
+                img {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+
+                h1 {
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        &__garantia_ativo {
+            border-bottom: red solid 0.1rem;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+:root{
+    --cor-primaria: black;
+    --cor-secundaria: rgb(20, 20, 20);
+    --cor-da-fonte: grey;
+    --cor-da-fonte-ativa: white;
+    --tamanho-fonte: 1rem;
+    --tamanho-fonte-titulo: 2rem;
+}

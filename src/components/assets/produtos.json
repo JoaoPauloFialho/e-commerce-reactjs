@@ -1,0 +1,58 @@
+[
+    {
+        "titulo": "Intel i3-10100F, GeForce GTX 1630 4GB, 8GB DDR4, SSD 240GB",
+        "preco": "3.379,02",
+        "imagem": "/assets/imagens/produtos/pc_gamer1.png",
+        "id": "1",
+        "tag": "Computador"
+    },
+    {
+        "titulo": "Cadeira Gamer Ravena V2 Red DT3",
+        "preco": "1.700,99",
+        "imagem": "/assets/imagens/produtos/cadeira_gamer1.png",
+        "id": "2",
+        "tag": "Cadeira"
+    },
+    {
+        "titulo": "Water Cooler DeepCool Castle, 240mm, Preto",
+        "preco": "528,30",
+        "imagem": "/assets/imagens/produtos/watercooler.png",
+        "id": "3",
+        "tag": "Hardware"
+    },
+    {
+        "titulo": "Mouse Razer 7200DPI+",
+        "preco": "3.379,02",
+        "imagem": "/assets/imagens/produtos/mouse_gamer1.png",
+        "id": "4",
+        "tag": "Acessorio"
+    },
+    {
+        "titulo": "Monitor Gamer Centauri SPRO24, 23.8 Pol., IPS, FHD, 1ms, 280Hz",
+        "preco": "1.645,20",
+        "imagem": "/assets/imagens/produtos/monitor_gamer1.png",
+        "id": "5",
+        "tag": "Monitor"
+    },
+    {
+        "titulo": "Intel i5-12400F, GeForce RTX 3070 TI 8GB, 16GB DDR4, SSD M.2 480GB",
+        "preco": "11.272,32",
+        "imagem": "/assets/imagens/produtos/pc_gamer3.png",
+        "id": "6",
+        "tag": "Computador"
+    },
+    {
+        "titulo": "Mousepad Gamer DeepCool GM810, Softpad, Grande, 450x400x3mm,R-GM810-BKNNNL-G",
+        "preco": "97,30",
+        "imagem": "/assets/imagens/produtos/mouse_pad2.png",
+        "id": "7",
+        "tag": "Acessorio"
+    },
+    {
+        "titulo": "Processador Intel Core i5-12400, 6-Core, 12-Threads, 2.5GHz (4.4GHz Turbo), Cache 18MB, LGA1700, BX8071512400",
+        "preco": "1.309,89",
+        "imagem": "/assets/imagens/produtos/pc_gamer1.png",
+        "id": "8",
+        "tag": "Computador"
+    }
+]

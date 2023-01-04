@@ -1,0 +1,78 @@
+@import url('./../../styles/_variaveis.css');
+
+.barra_menu{
+    border-top: solid var(--cor-secundaria) 1px;
+    border-bottom: solid var(--cor-secundaria) 1px;
+    width: 100vw;
+    background-color: var(--cor-primaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.menu{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.pesquisa{
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+.pesquisa_texto{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.imagem_lupa{
+    width: 1rem;
+    margin-right: 0.1rem;
+    cursor: pointer;
+}
+
+.menu_lateral{
+    background-color: var(--cor-primaria);
+    width: 10rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    position: absolute;
+    left: 0vh;
+
+    a{
+        color: grey;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: 0.5s;
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: white;
+        transition: 0.5s;
+        font-size: 1.1rem;
+    }
+}
+
+.menu_lateral_ativo{
+    left: 0vh;
+}
+
+.menu_lateral_logo{
+    width: 5rem;
+}
