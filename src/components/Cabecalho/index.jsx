@@ -28,7 +28,7 @@ export default function Cabecalho(props) {
                         </span>
                     </Link>
 
-                    <Link to={'/'}>
+                    <Link to={'/carrinho'}>
                         <span className={styles.carrinho_de_compras}>
                             <img src={iconCarrinho} alt='icone do carrinho de compras' />
                             <p>Carrinho de compras</p>

@@ -4,23 +4,30 @@ import logoPix from './logo_pix.png'
 import logoLoja from './logo_icon.png'
 import FreteGarantia from '../../components/FreteGarantia';
 import Filtragem from '../../components/Filtragem';
+import produtos from '../../components/assets/produtos.json'
+import precoStringParaFloat from '../../commons/functions/Converte/precoStringParaFloat'
+import conversaoPreco from '../../commons/functions/Converte/conversaoPreco';
 
 
 export default function ProdutoComprar() {
+    window.scroll(0, 100)
     const produtoId = useParams();
-    console.log(produtoId)
+    const produtoPag = produtos.find(produto => produto.id === produtoId['id'])
+    const precoFloat = precoStringParaFloat(produtoPag.preco)
     return (
         <>
             <section className={styles.produto_pagina}>
-                <img src='/assets/imagens/produtos/pc_gamer1.png' alt='imagem produto'></img>
+                <img src={produtoPag.imagem} alt='imagem produto'></img>
                 <span className={styles.produto_pagina__informacoes}>
-                    <h1 className={styles.produto_pagina__informacoes__titulo}>Intel i3-10100F, GeForce GTX 1630 4GB, 8GB DDR4, SSD 240GB</h1>
-                    <p className={styles.produto_pagina__informacoes__codigo}>Código Produto {produtoId.id}</p>
-                    <p className={styles.produto_pagina__informacoes__preco}>R$ 5.599,00</p>
-                    <p className={styles.produto_pagina__informacoes__parcelas}>ou 12x de R$ {parseInt(5599 / 12)}</p>
+                    <h1 className={styles.produto_pagina__informacoes__titulo}>{produtoPag.titulo}</h1>
+                    <p className={styles.produto_pagina__informacoes__codigo}>Código Produto {produtoPag.id}</p>
+                    <p className={styles.produto_pagina__informacoes__preco}>R$ {produtoPag.preco}</p>
+                    <p className={styles.produto_pagina__informacoes__parcelas}>ou 12x de R$ {
+                        conversaoPreco((precoFloat / 12).toFixed(2))
+                    }</p>
                     <span className={styles.produto_pagina__informacoes__pix}>
                         <img src={logoPix} alt="logo pix" />
-                        <p>R$ {parseInt(5599 - (5599 * 0.10))} pagando com PIX {`(-10%)`}</p>
+                        <p>R$ {(precoFloat - (precoFloat * 0.10)).toFixed(2)} pagando com PIX {`(-10%)`}</p>
                     </span>
                     <Link to={"/carrinho"} className={styles.produto_pagina__informacoes__botao_compra}>
                         <p style={{ color: 'white' }}>Comprar</p>
@@ -31,7 +38,7 @@ export default function ProdutoComprar() {
             </section>
             <section className={styles.semelhantes}>
                 <h1>Produtos semelhantes</h1>
-                <Filtragem tag="Computador" />
+                <Filtragem tag={produtoPag.tag} id={produtoPag.id} />
             </section>
         </>
     )

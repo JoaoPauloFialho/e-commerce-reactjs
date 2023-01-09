@@ -18,8 +18,6 @@ export default function FiltragemTags(props) {
 
     const filtraProdutos = (tag) => {
         const novos_cards = produtos.filter(produto => produto.tag === tag)
-        console.log(tag)
-        console.log(novos_cards)
         setCards(novos_cards);
     }
     return (

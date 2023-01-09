@@ -1,12 +1,11 @@
 @import-normalize;
-@import './_variaveis.css';
 
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     background-image: linear-gradient(var(--cor-primaria), var(--cor-secundaria));
-    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
   }
 
 body::-webkit-scrollbar{

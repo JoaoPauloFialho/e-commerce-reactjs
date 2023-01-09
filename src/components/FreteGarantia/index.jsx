@@ -2,7 +2,7 @@ import styles from './FreteGarantia.module.scss'
 import iconeCaminhao from './caminhao_icone.png'
 import iconeVerificado from './verificado_icone.png'
 import { useState } from 'react'
-import Frete from './Frete'
+import Frete from '../Frete'
 import Garantia from './Garantia'
 
 export default function FreteGarantia() {

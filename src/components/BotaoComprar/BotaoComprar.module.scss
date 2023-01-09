@@ -1,0 +1,33 @@
+.botao_compra {
+    display: flex;
+    background-color: rgb(255, 55, 55);
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border-radius: 8px;
+    column-gap: 1rem;
+    cursor: pointer;
+    height: 5rem;
+    width: 20rem;
+
+    img {
+        margin-top: 1rem;
+        width: 5rem;
+    }
+
+    p{
+        font-size: 2rem;
+        color: white;
+        margin-right: 2rem;
+    }
+}
+
+.botao_compra:hover{
+    background-color: rgb(252, 84, 84);
+    transition: 0.4s;
+}
+
+.botao_compra:active{
+    background-color: rgb(255, 27, 27);
+    transition: 0.4s;
+}

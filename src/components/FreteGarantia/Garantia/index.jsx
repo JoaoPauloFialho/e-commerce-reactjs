@@ -33,18 +33,9 @@ export default function Garantia() {
                     <img src={icone_garantia} alt='icone garantia' />
                     <h1>Cobertura em todo território nacional</h1>
                 </span>
-                <ul className={styles.garantias__lista}>
-                    {garantias.map((garantia) => {
-                        return (
-                            <li onClick={(event)=>{
-                                console.log(event)
-                            }} id={garantia.id}>
-                                <p>{garantia.nome}</p>
-                                <p className={styles.parcelas}>{garantia.parcelas}</p>
-                            </li>
-                        )
-                    })}
-                </ul>
+                <span className={styles.garantias__texto}>
+                    <p>Garantida estendida de até 2 meses</p>
+                </span>
             </div>
         </>
     )

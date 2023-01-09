@@ -5,6 +5,7 @@ import PaginaTemplate from "./pages/PaginaTemplate";
 import Rodape from "./components/Rodape";
 import NotFound from "./pages/NotFound";
 import ProdutoComprar from "./pages/ProdutoComprar";
+import Carrinho from "./pages/Carrinho";
 
 export default function AppRoutes() {
   return (
@@ -15,10 +16,11 @@ export default function AppRoutes() {
         <Route path="/" element={<PaginaTemplate />}>
           <Route index element={<Home />} />
           <Route path='produtos' element={<OfertasPage />} />
-          <Route path='produto/:id/' element={<ProdutoComprar/>} />
+          <Route path='produto/:id/' element={<ProdutoComprar />} />
+          <Route path="carrinho" element={<Carrinho />} />
         </Route>
 
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Rodape />
