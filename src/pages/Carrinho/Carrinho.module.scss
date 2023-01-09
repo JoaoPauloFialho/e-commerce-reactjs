@@ -21,8 +21,21 @@
         column-gap: 1.5rem;
 
         &__produtos {
-            overflow-y: scroll;
+            overflow-y: auto;
             height: 28rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.4rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(34, 34, 34);
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cor-primaria);
         }
     }
 }

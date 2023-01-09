@@ -1,6 +1,6 @@
 .botao_compra {
     display: flex;
-    background-color: rgb(255, 55, 55);
+    background-color: red;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
@@ -11,7 +11,7 @@
     width: 20rem;
 
     img {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         width: 5rem;
     }
 

@@ -1,6 +1,5 @@
 import PagamentoCarrinho from '../../components/PagamentoCarrinho'
 import ProdutosCarrinho from '../../components/ProdutosCarrinho'
-import BotaoComprar from '../../components/BotaoComprar'
 import styles from './Carrinho.module.scss'
 import carrinhoIcon from './carrinho_icon.png'
 

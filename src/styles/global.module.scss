@@ -9,14 +9,14 @@ body {
   }
 
 body::-webkit-scrollbar{
-  width: 0.4rem;
+  width: 0.7rem;
 }
 
 body::-webkit-scrollbar-thumb{
-  background-color: var(--cor-secundaria);
+  background-color: rgb(34, 34, 34);
   border-radius: 20px;
 }
 
 body::-webkit-scrollbar-track{
-  background: linear-gradient(var(--cor-primaria), var(--cor-secundaria));
+  background: var(--cor-primaria);
 }
