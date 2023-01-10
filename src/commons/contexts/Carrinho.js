@@ -98,6 +98,7 @@ export const useCarrinhoContext = () => {
         subTotal,
         frete,
         mudaFrete,
-        quantidade
+        quantidade,
+        setFrete
     }
 }

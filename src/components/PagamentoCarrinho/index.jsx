@@ -7,7 +7,7 @@ import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
 import conversaoPreco from '../../commons/functions/Converte/conversaoPreco'
 
 export default function PagamentoCarrinho() {
-    const { subTotal, mudaFrete, frete } = useCarrinhoContext()
+    const { subTotal, mudaFrete, frete = 0 } = useCarrinhoContext()
 
     return (
         <>
@@ -23,7 +23,7 @@ export default function PagamentoCarrinho() {
                     </span>
                     <span className={styles.pagamento__total}>
                         <p className={styles.pagamento__total_total}>Total</p>
-                        <p className={styles.pagamento__total_preco}>R$ {conversaoPreco(subTotal.toFixed(2))}</p>
+                        <p className={styles.pagamento__total_preco}>R$ {conversaoPreco((subTotal+frete).toFixed(2))}</p>
                     </span>
                     <div className={styles.pagamento__frete}>
                         <span className={styles.pagamento__frete_titulo}>

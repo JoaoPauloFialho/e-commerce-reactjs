@@ -6,9 +6,7 @@ export function UserContextProvider({ children }) {
     const [user, setUser] = useState(false);
 
     return (
-        <UserContext.Provider
-            value={{ user, setUser }}
-        >
+        <UserContext.Provider value={{ user, setUser }}>
             {children}
         </UserContext.Provider>
     );
@@ -28,11 +26,28 @@ export const useUserContext = () => {
         localStorage.setItem("usuarios_cadastrados", JSON.stringify(usuarios_cadastrados));
     }
 
+    function checaJaCadastrado(email) {
+        let usuarios = JSON.parse(localStorage.getItem("usuarios_cadastrados"));
+        if (usuarios) {
+            for (let i = 0; i < usuarios.length; i++) {
+                if(usuarios[i].usuario === email){
+                    return true;
+                }   
+            }
+        }
+        return false;
+    }
+
+    function limpaStorage(){
+        localStorage.clear()
+    }
+    
+
     function fazLogin(usuario, senha) {
         const usuarios = JSON.parse(localStorage.getItem("usuarios_cadastrados"))
         if (usuarios) {
             for (let i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].usuario == usuario && usuarios[i].senha == senha) {
+                if (usuarios[i].usuario === usuario && usuarios[i].senha === senha) {
                     return setUser({
                         usuario: usuario
                     });
@@ -45,6 +60,8 @@ export const useUserContext = () => {
     return {
         cadastrar,
         fazLogin,
-        user
+        user,
+        checaJaCadastrado,
+        limpaStorage,
     }
 }

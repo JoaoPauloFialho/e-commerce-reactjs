@@ -4,17 +4,21 @@ import styles from './Frete.module.scss'
 
 export default function Frete() {
     const [cep, setCep] = useState()
-    const { mudaFrete } = useCarrinhoContext()
+    const { mudaFrete, setFrete } = useCarrinhoContext()
 
     function aoMudarCep(event) {
         setCep(event.target.value)
     }
 
+
     function consultaCep(cep) {
         let url = `https://viacep.com.br/ws/${cep}/json/`
         fetch(url).then(response => response.json())
             .then(dados => mudaFrete(dados.cep))
-            .catch(erro => alert("Digite um CEP válido"))
+            .catch(erro => {
+                setFrete(0)
+                return alert("Digite um CEP válido")
+            })
     }
 
     return (
