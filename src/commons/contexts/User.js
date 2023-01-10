@@ -1,19 +1,25 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 export const UserContext = createContext({});
+UserContext.displayName = 'usuario'
 
 export function UserContextProvider({ children }) {
     const [user, setUser] = useState(false);
+    const [usuarios, setUsuarios] = useState(JSON.parse(localStorage.getItem("usuarios_cadastrados")));
+
+    useEffect(() => {
+        setUsuarios(JSON.parse(localStorage.getItem("usuarios_cadastrados")))
+    }, [])
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, usuarios, setUsuarios }}>
             {children}
         </UserContext.Provider>
     );
 };
 
 export const useUserContext = () => {
-    const { user, setUser } = useContext(UserContext)
+    const { user, setUser, usuarios, setUsuarios } = useContext(UserContext)
 
     function cadastrar(usuario, senha) {
         const usuarios_cadastrados = JSON.parse(localStorage.getItem("usuarios_cadastrados")) || [];
@@ -30,38 +36,39 @@ export const useUserContext = () => {
         let usuarios = JSON.parse(localStorage.getItem("usuarios_cadastrados"));
         if (usuarios) {
             for (let i = 0; i < usuarios.length; i++) {
-                if(usuarios[i].usuario === email){
+                if (usuarios[i].usuario === email) {
                     return true;
-                }   
-            }
-        }
-        return false;
-    }
-
-    function limpaStorage(){
-        localStorage.clear()
-    }
-    
-
-    function fazLogin(usuario, senha) {
-        const usuarios = JSON.parse(localStorage.getItem("usuarios_cadastrados"))
-        if (usuarios) {
-            for (let i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].usuario === usuario && usuarios[i].senha === senha) {
-                    return setUser({
-                        usuario: usuario
-                    });
                 }
             }
         }
         return false;
     }
 
+    function limpaStorage() {
+        localStorage.clear()
+    }
+
+
+    function loginCorreto(email, senha) {
+        const valido = usuarios.some(usuario => usuario.usuario === email && usuario.senha === senha)
+        if(valido) return true
+        return false
+    }
+
+    function fazLogin(email, senha){
+        setUser({
+            usuario:email,
+            senha
+        })
+    }
+
     return {
         cadastrar,
-        fazLogin,
         user,
         checaJaCadastrado,
         limpaStorage,
+        usuarios,
+        loginCorreto,
+        fazLogin
     }
 }

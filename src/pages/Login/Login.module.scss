@@ -2,52 +2,74 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3rem;
+    margin-top: 3rem;
+    margin-bottom: -0.5rem;
 
-
-    form {
-        padding: 1rem;
+    &__form {
         display: flex;
-        flex-direction: column;
-        row-gap: 0.5rem;
         align-items: center;
+        flex-direction: column;
         background-color: var(--cor-secundaria);
-        width: 20rem;
-
         h1 {
             color: white;
         }
 
-        input {
-            font-size: 1.2rem;
-            height: 2rem;
-        }
+        form {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5rem;
+            align-items: center;
+            width: 20rem;
 
-        button {
-            height: 2rem;
-            font-size: 1rem;
-            border-radius: 0.3rem;
-            width: 6rem;
-        }
+            input {
+                height: 2rem;
+                width: 15rem;
+            }
 
-        img{
-            width: 1.3rem;
-            margin-left: -14rem;
+            button {
+                cursor: pointer;
+                color: black;
+                border: none;
+                font-weight: bold;
+                background-color: rgb(58, 58, 58);
+                height: 2rem;
+                font-size: 1rem;
+                border-radius: 0.3rem;
+                width: 6rem;
+                transition: 0.5s;
+            }
+
+            button:hover{
+                background-color: grey;
+            }
+
+            img {
+                width: 1.3rem;
+                margin-left: -14rem;
+                cursor: pointer;
+            }
         }
     }
 
-    &__nao_possui{
+    &__nao_possui {
         display: flex;
         align-items: center;
-        p{
+
+        p {
             color: white;
             font-size: 0.7rem;
         }
 
-        a{
+        a {
             color: grey;
             font-size: 0.7rem;
             text-decoration: underline;
         }
     }
+}
+
+.erro{
+    color: red;
+    font-size: 0.7rem;
 }

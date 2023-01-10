@@ -49,7 +49,7 @@ export default function Cadastro() {
         event.preventDefault()
         if (validaSenha()) {
             if (!checaJaCadastrado(email)) {
-                cadastrar(email)
+                cadastrar(email, senha)
                 alert('Usuário cadastrado com sucesso')
                 nav('/login')
             }
@@ -70,9 +70,9 @@ export default function Cadastro() {
                     <form onSubmit={(event) => aoCadastrar(event)}>
                         <input
                             onChange={(event) => aoMudarEmail(event)}
-                            name='email'
+                            name='usuario'
                             type='text'
-                            placeholder='E-mail'
+                            placeholder='Usuario'
                         />
                         <input
                             onChange={(event) => aoMudarSenha(event)}
