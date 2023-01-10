@@ -29,9 +29,9 @@ export default function Login() {
     function aoLogar(event) {
         event.preventDefault()
         if (loginCorreto(email, senha)) {
-            setLoginInvalido(false)
             fazLogin(email, senha)
             alert('Usuário Logado')
+            nav('/')
         } else {
             let loginInvalido = <p className={styles.erro}>Usuário ou senha inválidos</p>
             setLoginInvalido(loginInvalido)

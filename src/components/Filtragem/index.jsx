@@ -11,7 +11,7 @@ export default function Filtragem(props) {
         <>
             {cards.length > 0 ? <Produtos produtos={cards} /> :
                 <div className={styles.filtragem}>
-                    <h3>SEM PRODUTOS PARA MOSTRAR {`:(`}</h3>
+                    <h3>SEM PRODUTOS PARA MOSTRAR</h3>
                 </div>}
         </>
     )

@@ -1,12 +1,30 @@
 import styles from './Cabecalho.module.scss'
 import logo from './logo_texto.png'
 import iconPerfil from './icon_perfil.png'
+import userIcon from './user_icon.png'
 import iconSac from './icon_sac.png'
 import iconCarrinho from './logo_icon.png'
 import { Link } from 'react-router-dom';
+import { useUserContext } from '../../commons/contexts/User'
+import { useEffect, useState } from 'react'
 
 
 export default function Cabecalho(props) {
+    const { user } = useUserContext()
+    const [usuarioRenderizacao, setUsuarioRenderizacao] = useState()
+
+
+    useEffect(() =>{
+    if (user) {
+        let renderizar =
+            <div className={styles.usuario}>
+                <span className={styles.usuario__nome}>
+                    <img src={userIcon} alt='icone do usuário' />
+                    <p>{user.usuario}</p>
+                </span>
+            </div>
+        setUsuarioRenderizacao(renderizar)
+    }}, [])
 
     return (
         <>
@@ -14,12 +32,15 @@ export default function Cabecalho(props) {
                 <Link to={'/'}><img className={styles.logo} src={logo} alt='Logo do site fialho shop'></img></Link>
 
                 <nav className={styles.nav_cabecalho}>
-                    <span className={styles.login_cadastro}>
-                        <img src={iconPerfil} alt='icone do perfil' />
-                        <Link to={'/login'}><p>Login</p></Link>
-                        <p className={styles.pipe}>|</p>
-                        <Link to={'/cadastrar'}><p>Cadastro</p></Link>
-                    </span>
+                    {usuarioRenderizacao ?
+                        usuarioRenderizacao :
+                        <span className={styles.login_cadastro}>
+                            <img src={iconPerfil} alt='icone do perfil' />
+                            <Link to={'/login'}><p>Login</p></Link>
+                            <p className={styles.pipe}>|</p>
+                            <Link to={'/cadastrar'}><p>Cadastro</p></Link>
+                        </span>
+                    }
 
                     <Link to={'/'}>
                         <span className={styles.atendimento_ao_cliente}>

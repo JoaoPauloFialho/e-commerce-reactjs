@@ -31,10 +31,6 @@ export default function PagamentoCarrinho() {
                             <h3>Calcular frete</h3>
                         </span>
                         <Frete />
-                        {frete > 0 ?
-                            <p>Valor do frete R$ {frete}</p> :
-                            ''
-                        }
                     </div>
                 </div>
                 <BotaoComprar>

@@ -1,9 +1,11 @@
+import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
 import styles from './BotaoComprar.module.scss'
 import icone from './logo_icon.png'
 
 export default function BotaoComprar({ children }) {
+    const { compra } = useCarrinhoContext()
     return (
-        <span className={styles.botao_compra}>
+        <span onClick={() => compra()} className={styles.botao_compra}>
             <img src={icone} alt="icone carrinho botao comprar"/>
             <p>{children}</p>
         </span>

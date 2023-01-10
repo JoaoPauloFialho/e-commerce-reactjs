@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
 import styles from './Frete.module.scss'
 
 export default function Frete() {
     const [cep, setCep] = useState()
-    const { mudaFrete, setFrete } = useCarrinhoContext()
+    const { frete, mudaFrete, setFrete } = useCarrinhoContext()
 
     function aoMudarCep(event) {
         setCep(event.target.value)
     }
+
+    useEffect(() => setFrete(false), [])
 
 
     function consultaCep(cep) {
@@ -32,6 +34,10 @@ export default function Frete() {
                 target='_blank'
                 rel='noreferrer'
             >Não sei meu CEP</a>
+            {frete > 0 ?
+                <p>Valor do frete R$ {frete}</p> :
+                ''
+            }
         </div>
     )
 }

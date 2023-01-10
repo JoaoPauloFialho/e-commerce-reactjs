@@ -13,7 +13,7 @@ export default function ProdutosCarrinho() {
             {carrinho.length != 0 ?
                 carrinho.map(prod => <CardProdutoCarrinho produto={prod} />) :
                 <div className={styles.carrinho_vazio}>
-                    <h2>Infelizmente o seu Carrinho está vazio {`:(`}</h2>
+                    <h2>Infelizmente o seu Carrinho está vazio</h2>
                     <button onClick={() => navegar("/")} className={styles.botao}>
                         HOME
                     </button>

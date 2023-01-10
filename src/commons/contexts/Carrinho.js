@@ -90,6 +90,11 @@ export const useCarrinhoContext = () => {
         return setFrete(fretes[codigo])
     }
 
+    function compra(){
+        setCarrinho([])
+        setFrete(false)
+    }
+
     return {
         carrinho,
         setCarrinho,
@@ -99,6 +104,7 @@ export const useCarrinhoContext = () => {
         frete,
         mudaFrete,
         quantidade,
-        setFrete
+        setFrete,
+        compra
     }
 }

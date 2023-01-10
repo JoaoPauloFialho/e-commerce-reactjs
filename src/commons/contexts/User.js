@@ -62,6 +62,11 @@ export const useUserContext = () => {
         })
     }
 
+    function deslogar(){
+        window.location.reload();
+        setUser(false)
+    }
+
     return {
         cadastrar,
         user,
@@ -69,6 +74,7 @@ export const useUserContext = () => {
         limpaStorage,
         usuarios,
         loginCorreto,
-        fazLogin
+        fazLogin,
+        deslogar,
     }
 }

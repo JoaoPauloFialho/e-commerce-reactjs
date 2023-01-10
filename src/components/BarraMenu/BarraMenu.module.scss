@@ -75,3 +75,19 @@
 .menu_lateral_logo{
     width: 5rem;
 }
+
+.sair{
+    color: grey;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.5s;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sair:hover{
+    color: white;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}

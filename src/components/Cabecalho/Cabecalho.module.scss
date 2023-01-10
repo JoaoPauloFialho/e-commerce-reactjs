@@ -77,3 +77,15 @@ a .logo {
     font-size: 1.2rem;
     cursor: default;
 }
+
+.usuario{
+    &__nome{
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+
+        img{
+            height: 1.5rem;
+        }
+    }
+}
