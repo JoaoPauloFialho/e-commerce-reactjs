@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useUserContext } from '../../commons/contexts/User'
 import CabecalhoLoginCadastro from '../../components/CabecalhoLoginCadastro'
@@ -30,8 +30,8 @@ export default function Login() {
         event.preventDefault()
         if (loginCorreto(email, senha)) {
             fazLogin(email, senha)
-            alert('Usuário Logado')
             nav('/')
+            alert('Usuário Logado')
         } else {
             let loginInvalido = <p className={styles.erro}>Usuário ou senha inválidos</p>
             setLoginInvalido(loginInvalido)
