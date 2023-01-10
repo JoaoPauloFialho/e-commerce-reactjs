@@ -3,3 +3,32 @@
     flex-direction: column;
     row-gap: 1rem;
 }
+
+.carrinho_vazio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 26rem;
+    background-color: var(--cor-secundaria);
+
+    h2{
+        font-size: 2rem;
+        color: white;
+    }
+    button{
+        background-color: orange;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px ;
+        transition: 0.5s;
+        width: 10rem;
+        height: 3rem;
+    }
+    
+    button:hover{
+        background-color: orangered;
+        cursor: pointer;
+    }
+}

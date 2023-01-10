@@ -1,0 +1,13 @@
+.cabecalho {
+    background-color: var(--cor-primaria);
+    display: flex;
+    padding: 1rem;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+
+    a .logo {
+        width: 17rem;
+        height: 2.8rem;
+    }
+}

@@ -10,15 +10,15 @@ export default function Cabecalho(props) {
 
     return (
         <>
-            <section className={styles.cabecalho}>
+            <header className={styles.cabecalho}>
                 <Link to={'/'}><img className={styles.logo} src={logo} alt='Logo do site fialho shop'></img></Link>
 
                 <nav className={styles.nav_cabecalho}>
                     <span className={styles.login_cadastro}>
                         <img src={iconPerfil} alt='icone do perfil' />
-                        <Link to={'/'}><p>Login</p></Link>
+                        <Link to={'/login'}><p>Login</p></Link>
                         <p className={styles.pipe}>|</p>
-                        <Link to={'/'}><p>Cadastro</p></Link>
+                        <Link to={'/cadastrar'}><p>Cadastro</p></Link>
                     </span>
 
                     <Link to={'/'}>
@@ -35,7 +35,7 @@ export default function Cabecalho(props) {
                         </span>
                     </Link>
                 </nav>
-            </section>
+            </header>
         </>
     )
 }

@@ -1,4 +1,3 @@
-import precoStringParaFloat from '../../commons/functions/Converte/precoStringParaFloat'
 const { createContext, useState, useContext, useEffect } = require("react");
 
 export const CarrinhoContext = createContext()
@@ -6,18 +5,37 @@ CarrinhoContext.displayName = "carrinho"
 
 export function CarrinhoContextProvider({ children }) {
     const [carrinho, setCarrinho] = useState([])
-    const [total, setTotal] = useState(0)
+    const [subTotal, setSubTotal] = useState(0)
     const [quantidade, setQuantidade] = useState(0)
+    const [frete, setFrete] = useState(0)
 
     return (
-        <CarrinhoContext.Provider value={{ carrinho, setCarrinho, total, setTotal, quantidade, setQuantidade }}>
+        <CarrinhoContext.Provider value={{
+            carrinho,
+            setCarrinho,
+            subTotal,
+            setSubTotal,
+            quantidade,
+            setQuantidade,
+            frete,
+            setFrete
+        }}>
             {children}
         </CarrinhoContext.Provider>
     )
 }
 
 export const useCarrinhoContext = () => {
-    const { carrinho, setCarrinho, total, setTotal, quantidade, setQuantidade } = useContext(CarrinhoContext)
+    const {
+        carrinho,
+        setCarrinho,
+        subTotal,
+        setSubTotal,
+        quantidade,
+        setQuantidade,
+        frete,
+        setFrete
+    } = useContext(CarrinhoContext)
 
     function adicionarProdutoNoCarrinho(produtoNovo) {
 
@@ -52,16 +70,34 @@ export const useCarrinhoContext = () => {
     }
 
     useEffect(() => {
-        const precoTotal = carrinho.reduce((contador, produto) => contador + (produto.preco * produto.quantidade), 0);
-        console.log(precoTotal)
-        setTotal(precoTotal)
-    }, [carrinho, setTotal])
+        const { novoTotal, novaQuantidade } = carrinho.reduce((contador, produto) => ({
+            novoTotal: contador.novoTotal + (produto.preco * produto.quantidade),
+            novaQuantidade: contador.novaQuantidade + produto.quantidade
+        })
+            , {
+                novoTotal: 0,
+                novaQuantidade: 0
+            })
+        setSubTotal(novoTotal)
+        setQuantidade(novaQuantidade)
+    }, [carrinho, setSubTotal, setQuantidade])
+
+    //seta o frete de acordo com a região do CEP (primeiro dígito do CEP)
+    function mudaFrete(codCep) {
+        const fretes = [40, 40, 35, 50, 60, 20, 10, 60, 50, 100]
+        let codigo = codCep[0]
+        codigo = parseInt(codigo)
+        return setFrete(fretes[codigo])
+    }
 
     return {
         carrinho,
         setCarrinho,
         adicionarProdutoNoCarrinho,
         removerProdutoDoCarrinho,
-        total
+        subTotal,
+        frete,
+        mudaFrete,
+        quantidade
     }
 }

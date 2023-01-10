@@ -32,7 +32,7 @@ export default function ProdutoComprar() {
                         Código Produto {produtoPag.id}
                     </p>
                     <p className={styles.produto_pagina__informacoes__preco}>
-                        R$ {produtoPag.preco}
+                        R$ {conversaoPreco((produtoPag.preco.toFixed(2)))}
                     </p>
                     <p className={styles.produto_pagina__informacoes__parcelas}>
                         ou 12x de R$ {
@@ -42,7 +42,7 @@ export default function ProdutoComprar() {
                     <span className={styles.produto_pagina__informacoes__pix}>
                         <img src={logoPix} alt="logo pix" />
                         <p>
-                            R$ {(precoFloat - (precoFloat * 0.10)).toFixed(2)} pagando com PIX {`(-10%)`}
+                            R$ {conversaoPreco((precoFloat - (precoFloat * 0.10)).toFixed(2))} pagando com PIX {`(-10%)`}
                         </p>
                     </span>
                     <Link

@@ -7,7 +7,7 @@ import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
 import conversaoPreco from '../../commons/functions/Converte/conversaoPreco'
 
 export default function PagamentoCarrinho() {
-    const { total } = useCarrinhoContext()
+    const { subTotal, mudaFrete, frete } = useCarrinhoContext()
 
     return (
         <>
@@ -19,11 +19,11 @@ export default function PagamentoCarrinho() {
                     </span>
                     <span className={styles.pagamento__sub_total}>
                         <p className={styles.pagamento__sub_total_sub_total}>Sub Total</p>
-                        <p className={styles.pagamento__sub_total_preco}>R$ {conversaoPreco(total.toFixed(2))}</p>
+                        <p className={styles.pagamento__sub_total_preco}>R$ {conversaoPreco(subTotal.toFixed(2))}</p>
                     </span>
                     <span className={styles.pagamento__total}>
                         <p className={styles.pagamento__total_total}>Total</p>
-                        <p className={styles.pagamento__total_preco}>R$ {conversaoPreco(total.toFixed(2))}</p>
+                        <p className={styles.pagamento__total_preco}>R$ {conversaoPreco(subTotal.toFixed(2))}</p>
                     </span>
                     <div className={styles.pagamento__frete}>
                         <span className={styles.pagamento__frete_titulo}>
@@ -31,7 +31,10 @@ export default function PagamentoCarrinho() {
                             <h3>Calcular frete</h3>
                         </span>
                         <Frete />
-                        <p>Valor do frete R$ 00</p>
+                        {frete > 0 ?
+                            <p>Valor do frete R$ {frete}</p> :
+                            ''
+                        }
                     </div>
                 </div>
                 <BotaoComprar>
