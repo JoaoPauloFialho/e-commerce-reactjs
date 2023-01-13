@@ -3,8 +3,8 @@ import styles from './PagamentoCarrinho.module.scss'
 import sacoDinheiro from './saco_dinheiro.png'
 import caminhao from './caminhao_icone.png'
 import BotaoComprar from '../BotaoComprar'
-import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
-import conversaoPreco from '../../commons/functions/Converte/conversaoPreco'
+import { useCarrinhoContext } from '../../common/contexts/Carrinho'
+import conversaoPreco from '../../common/functions/Converte/conversaoPreco'
 import { TiposPagamento } from '../TiposPagamento'
 
 export default function PagamentoCarrinho() {

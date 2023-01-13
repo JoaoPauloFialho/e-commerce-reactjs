@@ -6,11 +6,11 @@ import Rodape from "./components/Rodape";
 import NotFound from "./pages/NotFound";
 import ProdutoComprar from "./pages/ProdutoComprar";
 import Carrinho from "./pages/Carrinho";
-import { CarrinhoContextProvider } from "./commons/contexts/Carrinho";
+import { CarrinhoContextProvider } from "./common/contexts/Carrinho";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
-import { UserContextProvider } from "./commons/contexts/User";
-import { PagamentoContextProvider } from "./commons/contexts/Pagamento";
+import { UserContextProvider } from "./common/contexts/User";
+import { PagamentoContextProvider } from "./common/contexts/Pagamento";
 
 export default function AppRoutes() {
   return (

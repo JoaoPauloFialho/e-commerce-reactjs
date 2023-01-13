@@ -1,5 +1,5 @@
 import styles from './TiposPagamento.module.scss'
-import { usePagamentoContext } from '../../commons/contexts/Pagamento'
+import { usePagamentoContext } from '../../common/contexts/Pagamento'
 
 export function TiposPagamento() {
     const { pagamentos, mudaPagamento, tipoPagamento } = usePagamentoContext()

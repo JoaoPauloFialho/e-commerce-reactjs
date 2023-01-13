@@ -5,7 +5,7 @@ import userIcon from './user_icon.png'
 import iconSac from './icon_sac.png'
 import iconCarrinho from './logo_icon.png'
 import { Link } from 'react-router-dom';
-import { useUserContext } from '../../commons/contexts/User'
+import { useUserContext } from '../../common/contexts/User'
 import { useEffect, useState } from 'react'
 
 

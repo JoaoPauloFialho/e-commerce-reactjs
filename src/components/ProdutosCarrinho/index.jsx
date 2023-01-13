@@ -1,7 +1,6 @@
 import styles from './ProdutosCarrinho.module.scss'
-import produtos from '../assets/produtos.json'
 import CardProdutoCarrinho from '../CardProdutoCarrinho'
-import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
+import { useCarrinhoContext } from '../../common/contexts/Carrinho'
 import { useNavigate } from 'react-router-dom'
 
 export default function ProdutosCarrinho() {

@@ -1,8 +1,8 @@
 import Frete from '../Frete'
 import styles from './CardProdutoCarrinho.module.scss'
-import precoStringParaFloat from '../../commons/functions/Converte/precoStringParaFloat'
-import conversaoPreco from '../../commons/functions/Converte/conversaoPreco'
-import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
+import precoStringParaFloat from '../../common/functions/Converte/precoStringParaFloat'
+import conversaoPreco from '../../common/functions/Converte/conversaoPreco'
+import { useCarrinhoContext } from '../../common/contexts/Carrinho'
 
 export default function CardProdutoCarrinho({ produto }) {
     const { adicionarProdutoNoCarrinho, removerProdutoDoCarrinho } = useCarrinhoContext()

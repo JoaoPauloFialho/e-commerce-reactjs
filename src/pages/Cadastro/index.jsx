@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './Cadastro.module.scss'
 import icone_olho from './olhoicone.png'
 import CabecalhoLoginCadastro from '../../components/CabecalhoLoginCadastro'
-import { useUserContext } from '../../commons/contexts/User'
+import { useUserContext } from '../../common/contexts/User'
 import { useState } from 'react'
 
 export default function Cadastro() {

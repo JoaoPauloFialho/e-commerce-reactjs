@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useUserContext } from '../../commons/contexts/User'
+import { useUserContext } from '../../common/contexts/User'
 import CabecalhoLoginCadastro from '../../components/CabecalhoLoginCadastro'
 import styles from './Login.module.scss'
 import icone_olho from './olhoicone.png'

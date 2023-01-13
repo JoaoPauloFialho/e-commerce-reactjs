@@ -5,9 +5,9 @@ import logoLoja from './logo_icon.png'
 import FreteGarantia from '../../components/FreteGarantia';
 import Filtragem from '../../components/Filtragem';
 import produtos from '../../components/assets/produtos.json'
-import precoStringParaFloat from '../../commons/functions/Converte/precoStringParaFloat'
-import conversaoPreco from '../../commons/functions/Converte/conversaoPreco';
-import { useCarrinhoContext } from '../../commons/contexts/Carrinho';
+import precoStringParaFloat from '../../common/functions/Converte/precoStringParaFloat'
+import conversaoPreco from '../../common/functions/Converte/conversaoPreco';
+import { useCarrinhoContext } from '../../common/contexts/Carrinho';
 import { useEffect } from 'react';
 
 

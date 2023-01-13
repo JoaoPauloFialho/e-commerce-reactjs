@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Card.module.scss'
 import icone from './logo_icon.png'
-import conversaoPreco from '../../commons/functions/Converte/conversaoPreco'
+import conversaoPreco from '../../common/functions/Converte/conversaoPreco'
 
 export default function Card(props){
         return (

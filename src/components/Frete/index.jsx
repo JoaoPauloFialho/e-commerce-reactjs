@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
+import { useCarrinhoContext } from '../../common/contexts/Carrinho'
 import styles from './Frete.module.scss'
 
 export default function Frete() {

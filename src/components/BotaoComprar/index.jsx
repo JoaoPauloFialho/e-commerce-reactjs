@@ -1,4 +1,4 @@
-import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
+import { useCarrinhoContext } from '../../common/contexts/Carrinho'
 import styles from './BotaoComprar.module.scss'
 import icone from './logo_icon.png'
 
