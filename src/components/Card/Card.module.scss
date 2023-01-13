@@ -42,7 +42,7 @@
 
     &__botao_compra {
         display: flex;
-        background-color: rgb(255, 55, 55);
+        background-color: red;
         justify-content: start;
         align-items: center;
         transition: 0.4s;
@@ -62,12 +62,12 @@
     }
 
     &__botao_compra:hover{
-        background-color: rgb(252, 84, 84);
+        background-color: rgb(105, 0, 0);
         transition: 0.4s;
     }
 
     &__botao_compra:active{
-        background-color: rgb(255, 27, 27);
+        background-color: red;
         transition: 0.4s;
     }
 
