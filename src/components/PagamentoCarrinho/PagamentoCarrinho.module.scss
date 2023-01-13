@@ -10,7 +10,7 @@
     align-items: center;
     flex-direction: column;
     width: 20rem;
-    height: 22rem;
+    height: 26rem;
     background-color: var(--cor-secundaria);
 
 
@@ -33,6 +33,19 @@
         }
     }
 
+    &__tipo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h4{
+            color: white;
+        }
+
+        &__tipos{
+            margin-top: -0.6rem;
+        }
+    }
 
     &__sub_total {
         display: flex;
@@ -53,8 +66,8 @@
     }
     &__total {
         display: flex;
-        align-items: center;
         column-gap: 2rem;
+        margin-top: 2rem;
 
         &_total {
             font-size: 1rem;

@@ -35,7 +35,7 @@ export default function Frete() {
                 rel='noreferrer'
             >Não sei meu CEP</a>
             {frete > 0 ?
-                <p>Valor do frete R$ {frete}</p> :
+                <p className={styles.frete__valor}>Valor do frete R$ {frete}</p> :
                 ''
             }
         </div>

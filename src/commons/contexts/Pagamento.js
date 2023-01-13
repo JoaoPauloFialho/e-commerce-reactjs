@@ -11,13 +11,18 @@ export const PagamentoContextProvider = ({children}) =>{
             juro:1
         },
         {
-            tipo: 'Cartão',
+            tipo: 'Pix',
             id:1,
+            juro:1
+        },
+        {
+            tipo: 'Cartão',
+            id:2,
             juro:1.1
         },
         {
             tipo: 'Crediário',
-            id:2,
+            id:3,
             juro:1.15
         }
     ]

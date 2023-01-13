@@ -5,7 +5,7 @@ import caminhao from './caminhao_icone.png'
 import BotaoComprar from '../BotaoComprar'
 import { useCarrinhoContext } from '../../commons/contexts/Carrinho'
 import conversaoPreco from '../../commons/functions/Converte/conversaoPreco'
-import { Pagamentos } from '../Pagamentos'
+import { TiposPagamento } from '../TiposPagamento'
 
 export default function PagamentoCarrinho() {
     const { subTotal, mudaFrete, frete = 0 } = useCarrinhoContext()
@@ -18,13 +18,15 @@ export default function PagamentoCarrinho() {
                         <img src={sacoDinheiro} alt='saco dinheiro icone' />
                         <h3>Pagamento</h3>
                     </span>
+                    <span className={styles.pagamento__tipo}>
+                        <h4>Tipo Pagamento</h4>
+                        <span className={styles.pagamento__tipo__tipos}>
+                            <TiposPagamento />
+                        </span>
+                    </span>
                     <span className={styles.pagamento__sub_total}>
                         <p className={styles.pagamento__sub_total_sub_total}>Sub Total</p>
                         <p className={styles.pagamento__sub_total_preco}>R$ {conversaoPreco(subTotal.toFixed(2))}</p>
-                    </span>
-                    <span className={styles.pagamento__total}>
-                        <p className={styles.pagamento__total_total}>Total</p>
-                        <p className={styles.pagamento__total_preco}>R$ {conversaoPreco((subTotal + frete).toFixed(2))}</p>
                     </span>
                     <div className={styles.pagamento__frete}>
                         <span className={styles.pagamento__frete_titulo}>
@@ -33,7 +35,13 @@ export default function PagamentoCarrinho() {
                         </span>
                         <Frete />
                     </div>
-                    <Pagamentos/>
+                    <span className={styles.pagamento__linha}>
+                        <p> </p>
+                    </span>
+                    <span className={styles.pagamento__total}>
+                        <p className={styles.pagamento__total_total}>Total</p>
+                        <p className={styles.pagamento__total_preco}>R$ {conversaoPreco((subTotal + frete).toFixed(2))}</p>
+                    </span>
                 </div>
                 <BotaoComprar>
                     Comprar

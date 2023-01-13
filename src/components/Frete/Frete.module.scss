@@ -1,6 +1,7 @@
 .frete {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     &__botao {
         display: flex;
@@ -44,7 +45,11 @@
         transition: 0.3s;
     }
     
-    p{
+    &__valor{
         color: white;
+        position: absolute;
+        font-size: 0.6rem;
+        top: 5rem;
+        left: 4.75rem;
     }
 }
