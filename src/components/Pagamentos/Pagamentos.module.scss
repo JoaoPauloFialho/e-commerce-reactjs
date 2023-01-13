@@ -1,0 +1,14 @@
+.formulario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    select {
+        width: 15.56rem;
+        height: 2rem;
+        background: var(--cor-secundaria);
+        border: solid 1px rgb(39, 39, 39);
+        color: white;
+        font-weight: 100;
+    }
+}

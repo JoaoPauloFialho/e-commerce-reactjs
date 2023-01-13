@@ -51,7 +51,7 @@ export default function Cadastro() {
             if (!checaJaCadastrado(email)) {
                 cadastrar(email, senha)
                 alert('Usuário cadastrado com sucesso')
-                nav('/login')
+                window.location.pathname = '/login'
             }
             else {
                 alert('Usuário já cadastrado')

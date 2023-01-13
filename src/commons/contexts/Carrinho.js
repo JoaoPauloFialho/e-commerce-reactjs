@@ -1,3 +1,5 @@
+import { PagamentoContext, usePagamentoContext } from "./Pagamento";
+
 const { createContext, useState, useContext, useEffect } = require("react");
 
 export const CarrinhoContext = createContext()
@@ -36,6 +38,11 @@ export const useCarrinhoContext = () => {
         frete,
         setFrete
     } = useContext(CarrinhoContext)
+
+    const{
+        tipoPagamento,
+    } = usePagamentoContext()
+
 
     function adicionarProdutoNoCarrinho(produtoNovo) {
 
@@ -78,9 +85,9 @@ export const useCarrinhoContext = () => {
                 novoTotal: 0,
                 novaQuantidade: 0
             })
-        setSubTotal(novoTotal)
+        setSubTotal(novoTotal * tipoPagamento.juro)
         setQuantidade(novaQuantidade)
-    }, [carrinho, setSubTotal, setQuantidade])
+    }, [carrinho, setSubTotal, setQuantidade, tipoPagamento])
 
     //seta o frete de acordo com a região do CEP (primeiro dígito do CEP)
     function mudaFrete(codCep) {
