@@ -50,19 +50,21 @@ export const useUserContext = () => {
 
 
     function loginCorreto(email, senha) {
-        const valido = usuarios.some(usuario => usuario.usuario === email && usuario.senha === senha)
-        if(valido) return true
+        if (usuarios) {
+            const valido = usuarios.some(usuario => usuario.usuario === email && usuario.senha === senha)
+            if (valido) return true
+        }
         return false
     }
 
-    function fazLogin(email, senha){
+    function fazLogin(email, senha) {
         setUser({
-            usuario:email,
+            usuario: email,
             senha
         })
     }
 
-    function deslogar(){
+    function deslogar() {
         window.location.reload();
         setUser(false)
     }
