@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useUserContext } from '../../common/contexts/User'
-import CabecalhoLoginCadastro from '../../components/CabecalhoLoginCadastro'
 import styles from './Login.module.scss'
 import icone_olho from './olhoicone.png'
 
-export default function Login() {
+export default function Login(){
     const nav = useNavigate()
     const [email, setEmail] = useState()
     const [senha, setSenha] = useState()
@@ -37,11 +36,9 @@ export default function Login() {
             setLoginInvalido(loginInvalido)
         }
     }
-
-    return (
-        <>
-            <CabecalhoLoginCadastro />
-            <section className={styles.login}>
+    
+    return(
+        <section className={styles.login}>
                 <span className={styles.login__form}>
                     <form onSubmit={(event) => aoLogar(event)}>
                         <h1>Fazer Login</h1>
@@ -66,9 +63,8 @@ export default function Login() {
                 </span>
                 <span className={styles.login__nao_possui}>
                     <p>Não possui cadastro no site?</p>
-                    <Link to='/cadastrar'>Clique aqui e realize</Link>
+                    <Link to='/user/cadastrar'>Clique aqui e realize</Link>
                 </span>
             </section>
-        </>
     )
 }

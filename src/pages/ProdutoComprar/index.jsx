@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import styles from './ProdutoCompra.module.scss'
 import logoPix from './logo_pix.png'
 import logoLoja from './logo_icon.png'
+import Comentarios from '../../components/Comentarios'
 import FreteGarantia from '../../components/FreteGarantia';
 import Filtragem from '../../components/Filtragem';
 import produtos from '../../components/assets/produtos.json'
@@ -17,10 +18,10 @@ export default function ProdutoComprar() {
     const precoFloat = precoStringParaFloat(produtoPag.preco)
     const { adicionarProdutoNoCarrinho } = useCarrinhoContext()
 
-    //para que a página seja scrollada para o topo sempre que a página for recarregada
-    useEffect(() => {
+    //para que a página seja scrollada para o topo sempre que a página for carregada
+    /*useEffect(() => {
         window.scroll(0, 100)
-    }, [])
+    }, [])*/
 
     return (
         <>
@@ -56,6 +57,11 @@ export default function ProdutoComprar() {
                     <FreteGarantia />
                 </span>
             </section>
+
+            <section className={styles.produto_comentarios}>
+                <Comentarios />
+            </section>
+
             <section className={styles.semelhantes}>
                 <h1>Produtos semelhantes</h1>
                 <Filtragem tag={produtoPag.tag} id={produtoPag.id} />

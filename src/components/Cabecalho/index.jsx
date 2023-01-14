@@ -24,7 +24,7 @@ export default function Cabecalho(props) {
                 </span>
             </div>
         setUsuarioRenderizacao(renderizar)
-    }}, [])
+    }}, [user])
 
     return (
         <>
@@ -36,9 +36,9 @@ export default function Cabecalho(props) {
                         usuarioRenderizacao :
                         <span className={styles.login_cadastro}>
                             <img src={iconPerfil} alt='icone do perfil' />
-                            <Link to={'/login'}><p>Login</p></Link>
+                            <Link to={'/user/login'}><p>Login</p></Link>
                             <p className={styles.pipe}>|</p>
-                            <Link to={'/cadastrar'}><p>Cadastro</p></Link>
+                            <Link to={'/user/cadastrar'}><p>Cadastro</p></Link>
                         </span>
                     }
 

@@ -1,0 +1,41 @@
+.comentario {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border-top: solid 1px white;
+    padding: 1.5rem;
+    row-gap: 0.6rem;
+    border-bottom: solid 1px white;
+    width: 40rem;
+
+    &__titulo {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--cor-secundaria);
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 3rem;
+
+            p {
+                text-decoration: solid;
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+
+        p {
+            color: white;
+        }
+    }
+    
+    &__texto{
+        color: white;
+        font-size: 0.7rem;
+    }
+}

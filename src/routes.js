@@ -7,10 +7,12 @@ import NotFound from "./pages/NotFound";
 import ProdutoComprar from "./pages/ProdutoComprar";
 import Carrinho from "./pages/Carrinho";
 import { CarrinhoContextProvider } from "./common/contexts/Carrinho";
-import Login from "./pages/Login";
-import Cadastro from "./pages/Cadastro";
 import { UserContextProvider } from "./common/contexts/User";
 import { PagamentoContextProvider } from "./common/contexts/Pagamento";
+import { ComentariosContextProvider } from "./common/contexts/Comentarios";
+import LoginPage from "./pages/LoginPage";
+import CadastroPage from "./pages/CadastroPage";
+import PaginaTemplateLoginCadastro from "./pages/PaginaTemplateLoginCadastro";
 
 export default function AppRoutes() {
   return (
@@ -19,19 +21,25 @@ export default function AppRoutes() {
       <UserContextProvider>
         <PagamentoContextProvider>
           <CarrinhoContextProvider>
-            <Routes>
+            <ComentariosContextProvider>
 
-              <Route path="/" element={<PaginaTemplate />}>
-                <Route index element={<Home />} />
-                <Route path='produtos' element={<OfertasPage />} />
-                <Route path='produto/:id/' element={<ProdutoComprar />} />
-                <Route path="carrinho" element={<Carrinho />} />
-              </Route>
+              <Routes>
+                <Route path="/" element={<PaginaTemplate />}>
+                  <Route index element={<Home />} />
+                  <Route path='produtos' element={<OfertasPage />} />
+                  <Route path='produto/:id/' element={<ProdutoComprar />} />
+                  <Route path="carrinho" element={<Carrinho />} />
+                </Route>
 
-              <Route path="/login" element={<Login />} />
-              <Route path="/cadastrar" element={<Cadastro />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+                <Route path="/user" element={<PaginaTemplateLoginCadastro />}>
+                  <Route path="login" element={<LoginPage />} />
+                  <Route path="cadastrar" element={<CadastroPage />} />
+                </Route>
+
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+
+            </ComentariosContextProvider>
           </CarrinhoContextProvider>
         </PagamentoContextProvider>
       </UserContextProvider>

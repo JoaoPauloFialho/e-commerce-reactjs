@@ -3,7 +3,7 @@
 .produto_pagina {
     display: flex;
     margin: 4rem 4rem 8rem 4rem;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
 
     img {
@@ -92,4 +92,11 @@
         color: white;
         margin-left: 4rem;
     }
+}
+
+.produto_comentarios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }

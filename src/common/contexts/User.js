@@ -32,11 +32,11 @@ export const useUserContext = () => {
         localStorage.setItem("usuarios_cadastrados", JSON.stringify(usuarios_cadastrados));
     }
 
-    function checaJaCadastrado(email) {
+    function checaJaCadastrado(usuario) {
         let usuarios = JSON.parse(localStorage.getItem("usuarios_cadastrados"));
         if (usuarios) {
             for (let i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].usuario === email) {
+                if (usuarios[i].usuario === usuario) {
                     return true;
                 }
             }
