@@ -4,7 +4,7 @@ import { useUserContext } from '../../common/contexts/User'
 import styles from './Login.module.scss'
 import icone_olho from './olhoicone.png'
 
-export default function Login(){
+export default function Login({redirect}){
     const nav = useNavigate()
     const [email, setEmail] = useState()
     const [senha, setSenha] = useState()
@@ -29,7 +29,7 @@ export default function Login(){
         event.preventDefault()
         if (loginCorreto(email, senha)) {
             fazLogin(email, senha)
-            nav('/')
+            if(redirect) nav('/')
             alert('Usuário Logado')
         } else {
             let loginInvalido = <p className={styles.erro}>Usuário ou senha inválidos</p>
