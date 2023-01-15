@@ -27,12 +27,13 @@ export function useComentariosContext(){
         return false
     }
 
-    function fazerComentario(usuario, data, comentario){
+    function fazerComentario(usuario, data, comentario, id){
         
         const coment = {
-            usuario:usuario,
-            data:data,
-            comentario:comentario
+            usuario,
+            data,
+            comentario,
+            id
         }
         return setComentarios(prevComentarios => [...prevComentarios, coment])
     }

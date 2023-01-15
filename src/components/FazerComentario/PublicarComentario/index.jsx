@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { useComentariosContext } from '../../../common/contexts/Comentarios'
 import { useUserContext } from '../../../common/contexts/User'
 import getDataHoraAtual from '../../../common/functions/DataHorario/getDataHoraAtual'
@@ -10,6 +11,7 @@ export default function PublicarComentario() {
     const { user } = useUserContext()
     const { comentarios, fazerComentario, jaComentou } = useComentariosContext()
     const [comentario, setComentario] = useState()
+    const produtoId = useParams();
     const comentarioUser = comentarios.filter(comentario => comentario.usuario === user.usuario)[0]
 
     function aoMudarComentario(event) {
@@ -18,7 +20,7 @@ export default function PublicarComentario() {
 
     function aoPublicarComentario(event) {
         event.preventDefault()
-        if (!jaComentou()) fazerComentario(user.usuario, getDataHoraAtual(), comentario)
+        if (!jaComentou()) fazerComentario(user.usuario, getDataHoraAtual(), comentario, produtoId.id)
     }
 
     if (!comentarioUser) {

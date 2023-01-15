@@ -9,6 +9,7 @@ export function UserContextProvider({ children }) {
 
     useEffect(() => {
         setUsuarios(JSON.parse(localStorage.getItem("usuarios_cadastrados")))
+
     }, [])
 
     return (
@@ -20,6 +21,12 @@ export function UserContextProvider({ children }) {
 
 export const useUserContext = () => {
     const { user, setUser, usuarios, setUsuarios } = useContext(UserContext)
+
+    useEffect(() => {
+        let usuarioValidado = JSON.parse(localStorage.getItem("usuarioLogado")) || false
+        if (usuarioValidado) return setUser(usuarioValidado)
+        else return setUser(false)
+    }, [])
 
     function cadastrar(usuario, senha) {
         const usuarios_cadastrados = JSON.parse(localStorage.getItem("usuarios_cadastrados")) || [];
@@ -57,15 +64,19 @@ export const useUserContext = () => {
         return false
     }
 
-    function fazLogin(email, senha) {
+    function fazLogin(usuario, senha) {
+        const userDados = {
+            usuario
+        }
+        localStorage.setItem("usuarioLogado", JSON.stringify(userDados));
         setUser({
-            usuario: email,
-            senha
+            usuario
         })
     }
 
     function deslogar() {
         window.location.reload();
+        localStorage.removeItem('usuarioLogado')
         setUser(false)
     }
 

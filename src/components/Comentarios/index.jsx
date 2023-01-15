@@ -1,16 +1,32 @@
 import Comentario from './Comentario'
 import FazerComentario from '../FazerComentario'
 import styles from './Comentarios.module.scss'
+import { useComentariosContext } from '../../common/contexts/Comentarios'
+import { useParams } from 'react-router-dom'
+import { useUserContext } from '../../common/contexts/User'
 
 export default function Comentarios() {
-    let text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, perferendis doloremque. Molestiae, accusantium! Fugiat corrupti beatae soluta nihil iste nisi praesentium quam eveniet, a distinctio sunt aut ipsam dicta tempore!'
+    const { comentarios } = useComentariosContext()
+    const { user } = useUserContext()
+    const usuarioId = useParams()
+
+    //filtra os comentários para que não apareca o comentário do usuário e somente os comentários daquele produto
+    const comentariosPage = comentarios.filter(
+        comentario => comentario.id === usuarioId && comentario.usuario !== user.usuario
+    )
 
     return (
         <section className={styles.conteiner}>
             <h2>Avalie o produto</h2>
-            <FazerComentario/>
+            <FazerComentario />
             <h2>Comentários</h2>
-            <Comentario nome='João Paulo' texto={text} data='13/01/2003' horario='23:47'/>
+            {comentariosPage.map(comentario =>
+                <Comentario
+                    nome={comentario.usuario}
+                    dataHora={comentario.data}
+                    texto={comentario.comentario}
+                />
+            )}
         </section>
     )
 }
