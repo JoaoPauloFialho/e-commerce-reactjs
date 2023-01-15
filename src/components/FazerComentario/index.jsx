@@ -10,19 +10,38 @@ import PublicarComentario from './PublicarComentario'
 
 export default function FazerComentario() {
     const { user } = useUserContext()
+    const { comentarios } = useComentariosContext()
     const [cancelar, setCancelar] = useState(false)
+    const comentarioUser = comentarios.filter(comentario => comentario.usuario === user.usuario)[0]
 
     function mudaBotao() {
         return setCancelar(preCancelar => !preCancelar)
     }
 
+    //
+    let userComentario = comentarioUser ?
+        <div className={styles.user_comentario}>
+            <p>Seu comentário</p>
+            <Comentario nome={comentarioUser.usuario} dataHora={comentarioUser.data} texto={comentarioUser.comentario} />
+        </div> : ''
 
-    let naoLogado = <Login />
+    let naoLogado =
+        <div className={styles.user_login}>
+            <p className={styles.user_login__titulo}>Faça o Login para avaliar o produto</p>
+            <Login />
+        </div>
+
+
+    //checa se existe um comentário ou não, se existir atribui o valor dele se não chama o componente
+    //para publicar comentário
+    let comentarioOuComentar = comentarioUser ? userComentario : <PublicarComentario />
 
     return (
         <div className={styles.container}>
-            <BotaoFacaUmaAvaliacao cancelar={cancelar} mudaBotao={mudaBotao} />
-            { user ? <PublicarComentario/> : naoLogado}
+            <span className={styles.container__avaliacoes_span}>
+                <p>0 avaliações</p>
+            </span>
+            {user ? comentarioOuComentar : naoLogado}
         </div>
     )
 }

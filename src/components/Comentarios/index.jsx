@@ -7,8 +7,9 @@ export default function Comentarios() {
 
     return (
         <section className={styles.conteiner}>
-            <h2>Avaliações do produto</h2>
+            <h2>Avalie o produto</h2>
             <FazerComentario/>
+            <h2>Comentários</h2>
             <Comentario nome='João Paulo' texto={text} data='13/01/2003' horario='23:47'/>
         </section>
     )

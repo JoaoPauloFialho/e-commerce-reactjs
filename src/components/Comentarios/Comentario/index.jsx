@@ -4,9 +4,6 @@ import fazerSigla from '../../../common/functions/Formatacao/fazerSigla'
 
 export default function Comentario(props) {
 
-    console.log(props.nome)
-    console.log(props.texto)
-
     return (
         <div className={styles.comentario}>
             <span className={styles.comentario__titulo}>

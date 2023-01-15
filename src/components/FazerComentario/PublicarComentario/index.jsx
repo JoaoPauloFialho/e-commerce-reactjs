@@ -21,14 +21,11 @@ export default function PublicarComentario() {
         if (!jaComentou()) fazerComentario(user.usuario, getDataHoraAtual(), comentario)
     }
 
-    if (comentarioUser) {
+    if (!comentarioUser) {
         return (
-            <Comentario nome={comentarioUser.usuario} data={comentarioUser.data} texto={comentarioUser.comentario} />
-        )
-    } else {
-        return (
-            <div className={styles.comentario}>
-                <span className={styles.comentario__titulo}>
+            <div className={styles.conteiner}>
+                <p className={styles.conteiner__titulo}>Faça o seu comentário</p>
+                <span className={styles.conteiner__comentario_titulo}>
                     <span>
                         <p>{fazerSigla(user.usuario)}</p>
                     </span>

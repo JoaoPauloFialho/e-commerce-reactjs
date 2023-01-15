@@ -3,6 +3,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 6rem;
+    row-gap: 3rem;
+
+    &__avaliacoes_span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 4rem;
+        p{
+            color: white;
+            font-weight: bold;
+        }
+    }
+
 }
 
 .comentario {
@@ -69,5 +83,26 @@
         button:hover{
             background-color: rgb(39, 39, 39);
         }
+    }
+}
+
+.user_comentario{
+    display: flex;
+    flex-direction: column;
+    p{
+        color: white;
+        font-size: 1.3rem;
+    }
+}
+
+.user_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__titulo{
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: -1rem;
     }
 }
