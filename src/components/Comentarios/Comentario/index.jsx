@@ -1,17 +1,11 @@
 import styles from './Comentario.module.scss'
-import userComentarioFundo from './user_comentario_fundo.png'
+import fazerSigla from '../../../common/functions/Formatacao/fazerSigla'
 
 
 export default function Comentario(props) {
 
-    function fazerSigla(string){
-        const array = []
-        array.push(string.toUpperCase()[0])
-        for (let i = string.length; i != -1; i--) {
-            if(string[i] === ' ') array.push(string[i+1])
-        }
-        return array.join('')
-    }
+    console.log(props.nome)
+    console.log(props.texto)
 
     return (
         <div className={styles.comentario}>
@@ -19,7 +13,7 @@ export default function Comentario(props) {
                 <span>
                     <p>{fazerSigla(props.nome)}</p>
                 </span>
-                <p className={styles.comentario__titulo__usuario}> <b>{props.nome}</b> {`(${props.data} ${props.horario})`}</p>
+                <p className={styles.comentario__titulo__usuario}> <b>{props.nome}</b> {props.dataHora}</p>
             </span>
             <p className={styles.comentario__texto}>{props.texto}</p>
         </div>
