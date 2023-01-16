@@ -10,9 +10,8 @@ export default function Comentarios() {
     const { user } = useUserContext()
     const usuarioId = useParams()
 
-    //filtra os comentários para que não apareca o comentário do usuário e somente os comentários daquele produto
     const comentariosPage = comentarios.filter(
-        comentario => comentario.id === usuarioId.id && comentario.usuario !== user.usuario
+        comentario => comentario.id === usuarioId.id
     )
 
     return (
