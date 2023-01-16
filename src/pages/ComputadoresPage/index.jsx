@@ -9,7 +9,7 @@ export default function ComputadoresPage() {
                 <img src={computadorIcone} alt='computador icone'/>
                 <h1>Computadores</h1>
             </span>
-            <Filtragem />
+            <Filtragem tag='Computador'/>
         </main>
     )
 }

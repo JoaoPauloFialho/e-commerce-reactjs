@@ -10,7 +10,6 @@ export function ComentariosContextProvider({children}){
 
     useEffect(()=>{
         setComentarios(JSON.parse(localStorage.getItem("comentarios")) || [])
-        console.log(comentarios)
     }, [])
 
     return(
