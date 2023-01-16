@@ -1,10 +1,10 @@
-import styles from './FiltragemTags.module.scss'
+import styles from './TagsDeFiltragem.module.scss'
 import produtos from '../assets/produtos.json';
 import Produtos from '../Produtos';
 import BotaoTags from '../BotaoTags';
 import { useState } from 'react';
 
-export default function FiltragemTags(props) {
+export default function TagsDeFiltragem(props) {
     const initial_state = produtos
     const [cards, setCards] = useState(initial_state)
 

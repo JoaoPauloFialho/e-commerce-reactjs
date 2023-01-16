@@ -1,7 +1,7 @@
 import { Component } from "react";
 import styles from './OfertasPage.module.scss';
 import iconeDesconto from './icon_desconto.png';
-import FiltragemTags from "../../components/FiltragemTags";
+import TagsDeFiltragem from "../../components/TagsDeFiltragem";
 
 export default class Produtos extends Component {
 
@@ -13,7 +13,7 @@ export default class Produtos extends Component {
                         <img src={iconeDesconto} alt="icone desconto"/>
                         <h2>Ofertas</h2>
                     </span>
-                    <FiltragemTags/>
+                    <TagsDeFiltragem/>
                 </section>
             </>
         )

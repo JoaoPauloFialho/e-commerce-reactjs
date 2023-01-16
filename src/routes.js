@@ -13,6 +13,7 @@ import { ComentariosContextProvider } from "./common/contexts/Comentarios";
 import LoginPage from "./pages/LoginPage";
 import CadastroPage from "./pages/CadastroPage";
 import PaginaTemplateLoginCadastro from "./pages/PaginaTemplateLoginCadastro";
+import ComputadoresPage from "./pages/ComputadoresPage";
 
 export default function AppRoutes() {
   return (
@@ -29,6 +30,7 @@ export default function AppRoutes() {
                   <Route path='produtos' element={<OfertasPage />} />
                   <Route path='produto/:id/' element={<ProdutoComprar />} />
                   <Route path="carrinho" element={<Carrinho />} />
+                  <Route path="computadores" element={<ComputadoresPage />} />
                 </Route>
 
                 <Route path="/user" element={<PaginaTemplateLoginCadastro />}>

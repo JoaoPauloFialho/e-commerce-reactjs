@@ -12,10 +12,10 @@ export default class BarraMenu extends Component{
     
     constructor(props){
         super(props)
-        this.showMenu = this.showMenu.bind(this)
+        this.mostrarMenu = this.mostrarMenu.bind(this)
     }
 
-    showMenu(e){
+    mostrarMenu(e){
         if(!this.state.mostrar_menu){
             this.setState({mostrar_menu : true})
             return
@@ -27,7 +27,7 @@ export default class BarraMenu extends Component{
         return(
             <>
                 <section className={styles.barra_menu}>
-                    <img onClick={e => this.showMenu(e)} className={styles.menu} src={menu} alt="icone de menu" />
+                    <img onClick={e => this.mostrarMenu(e)} className={styles.menu} src={menu} alt="icone de menu" />
                     <div className={styles.pesquisa}>
                         <input type='text' className={styles.pesquisa_texto} placeholder='Pesquisar Produtos'/>
                         <img  className={styles.imagem_lupa} src={lupa} alt='lupa de pesquisa'/>

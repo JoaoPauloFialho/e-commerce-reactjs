@@ -4,7 +4,7 @@ import logoPix from './logo_pix.png'
 import logoLoja from './logo_icon.png'
 import Comentarios from '../../components/Comentarios'
 import FreteGarantia from '../../components/FreteGarantia';
-import Filtragem from '../../components/Filtragem';
+import ProdutosSemelhantes from '../../components/ProdutosSemelhantes';
 import produtos from '../../components/assets/produtos.json'
 import precoStringParaFloat from '../../common/functions/Converte/precoStringParaFloat'
 import conversaoPreco from '../../common/functions/Converte/conversaoPreco';
@@ -19,9 +19,9 @@ export default function ProdutoComprar() {
     const { adicionarProdutoNoCarrinho } = useCarrinhoContext()
 
     //para que a página seja scrollada para o topo sempre que a página for carregada
-    /*useEffect(() => {
+    useEffect(() => {
         window.scroll(0, 100)
-    }, [])*/
+    }, [])
 
     return (
         <>
@@ -64,7 +64,7 @@ export default function ProdutoComprar() {
 
             <section className={styles.semelhantes}>
                 <h1>Produtos semelhantes</h1>
-                <Filtragem tag={produtoPag.tag} id={produtoPag.id} />
+                <ProdutosSemelhantes tag={produtoPag.tag} id={produtoPag.id} />
             </section>
         </>
     )
