@@ -51,10 +51,6 @@ export const useUserContext = () => {
         return false;
     }
 
-    function limpaStorage() {
-        localStorage.clear()
-    }
-
 
     function loginCorreto(email, senha) {
         if (usuarios) {
@@ -84,7 +80,6 @@ export const useUserContext = () => {
         cadastrar,
         user,
         checaJaCadastrado,
-        limpaStorage,
         usuarios,
         loginCorreto,
         fazLogin,

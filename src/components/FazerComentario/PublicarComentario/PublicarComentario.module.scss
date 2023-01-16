@@ -70,3 +70,12 @@
         }
     }
 }
+
+.user_comentario{
+    display: flex;
+    flex-direction: column;
+    p{
+        color: white;
+        font-size: 1.3rem;
+    }
+}

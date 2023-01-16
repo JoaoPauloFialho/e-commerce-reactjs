@@ -1,12 +1,17 @@
 import { useUserContext } from "./User";
 
-const { createContext, useState, useContext } = require("react");
+const { createContext, useState, useContext, useEffect } = require("react");
 
 const ComentariosContext = createContext()
 ComentariosContext.displayName = 'Comentarios'
 
 export function ComentariosContextProvider({children}){
     const [comentarios, setComentarios] = useState([])
+
+    useEffect(()=>{
+        setComentarios(JSON.parse(localStorage.getItem("comentarios")) || [])
+        console.log(comentarios)
+    }, [])
 
     return(
         <ComentariosContext.Provider value={{comentarios, setComentarios}}>
@@ -19,23 +24,27 @@ export function useComentariosContext(){
     const {comentarios, setComentarios} = useContext(ComentariosContext)
     const { user } = useUserContext()
 
-    function jaComentou(){
+    function jaComentou(idproduto){
         if(user){
-            const jaComentou = comentarios.some(comentario => comentario.usuario === user.usuario)
+            const jaComentou = comentarios.some(
+                comentario => comentario.usuario === user.usuario && comentario.id === idproduto
+                )
             return jaComentou
         }
         return false
     }
 
     function fazerComentario(usuario, data, comentario, id){
-        
+        const novosComentarios = JSON.parse(localStorage.getItem("comentarios")) || []
         const coment = {
             usuario,
             data,
             comentario,
             id
         }
-        return setComentarios(prevComentarios => [...prevComentarios, coment])
+        novosComentarios.push(coment)
+        localStorage.setItem("comentarios", JSON.stringify(novosComentarios));
+        setComentarios(prevComentarios => [...prevComentarios, coment])
     }
 
     function acharComentarioUsuario(){

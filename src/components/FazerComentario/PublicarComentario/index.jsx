@@ -12,7 +12,9 @@ export default function PublicarComentario() {
     const { comentarios, fazerComentario, jaComentou } = useComentariosContext()
     const [comentario, setComentario] = useState()
     const produtoId = useParams();
-    const comentarioUser = comentarios.filter(comentario => comentario.usuario === user.usuario)[0]
+    const comentarioUser = comentarios.filter(
+        comentario => comentario.usuario === user.usuario && comentario.id === produtoId.id 
+        )[0]
 
     function aoMudarComentario(event) {
         setComentario(event.target.value)
@@ -20,7 +22,7 @@ export default function PublicarComentario() {
 
     function aoPublicarComentario(event) {
         event.preventDefault()
-        if (!jaComentou()) fazerComentario(user.usuario, getDataHoraAtual(), comentario, produtoId.id)
+        if (!jaComentou(produtoId.id)) fazerComentario(user.usuario, getDataHoraAtual(), comentario, produtoId.id)
     }
 
     if (!comentarioUser) {
@@ -43,6 +45,17 @@ export default function PublicarComentario() {
                     />
                     <button>Publicar</button>
                 </form>
+            </div>
+        )
+    } else {
+        return (
+            <div className={styles.user_comentario}>
+                <p>Seu comentário</p>
+                <Comentario
+                    nome={comentarioUser.usuario}
+                    dataHora={comentarioUser.data}
+                    texto={comentarioUser.comentario}
+                />
             </div>
         )
     }

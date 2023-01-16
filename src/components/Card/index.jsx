@@ -13,12 +13,12 @@ export default function Card(props){
                         <p className={styles.card__preco}>R$ {conversaoPreco(props.preco.toFixed(2))}</p>
                         <p className={styles.card__pix}>À vista no pix</p>
                     </span>
-                    <Link to={`/produto/${props.id}`}>
+                    <a href={`/produto/${props.id}`}>
                     <span className={styles.card__botao_compra}>
                         <img src={icone} alt="icone carrinho botao comprar"/>
                         <p>Comprar</p>
                     </span>
-                    </Link>
+                    </a>
                 </div>
             </>
         )

@@ -18,13 +18,8 @@ export default function FazerComentario() {
         comentario =>{
             return comentario.usuario === user.usuario && comentario.id === produtoId.id}
         )[0]
+        console.log(comentarioUser)
 
-
-    function mudaBotao() {
-        return setCancelar(preCancelar => !preCancelar)
-    }
-
-    console.log(comentarioUser)
     let userComentario = comentarioUser ?
         <div className={styles.user_comentario}>
             <p>Seu comentário</p>
@@ -36,14 +31,13 @@ export default function FazerComentario() {
             <p className={styles.user_login__titulo}>Faça o Login para avaliar o produto</p>
             <Login />
         </div>
-    console.log(userComentario)
 
     return (
         <div className={styles.container}>
             <span className={styles.container__avaliacoes_span}>
                 <p>0 avaliações</p>
             </span>
-            {user ? userComentario : naoLogado}
+            {user ? <PublicarComentario/> : naoLogado}
         </div>
     )
 }
