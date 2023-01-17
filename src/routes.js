@@ -14,6 +14,7 @@ import LoginPage from "./pages/LoginPage";
 import CadastroPage from "./pages/CadastroPage";
 import PaginaTemplateLoginCadastro from "./pages/PaginaTemplateLoginCadastro";
 import ComputadoresPage from "./pages/ComputadoresPage";
+import HardwarePage from "./pages/HardwarePage";
 
 export default function AppRoutes() {
   return (
@@ -31,6 +32,7 @@ export default function AppRoutes() {
                   <Route path='produto/:id/' element={<ProdutoComprar />} />
                   <Route path="carrinho" element={<Carrinho />} />
                   <Route path="computadores" element={<ComputadoresPage />} />
+                  <Route path="hardware" element={<HardwarePage />} />
                 </Route>
 
                 <Route path="/user" element={<PaginaTemplateLoginCadastro />}>

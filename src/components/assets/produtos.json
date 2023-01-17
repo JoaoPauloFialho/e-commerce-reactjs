@@ -20,7 +20,8 @@
         "preco": 528.30,
         "imagem": "/assets/imagens/produtos/watercooler.png",
         "id": "3",
-        "tag": "Hardware"
+        "tag": "Acessorio",
+        "tipo": "Cooler"
     },
     {
         "titulo": "Mouse Razer 7200DPI+",
@@ -57,8 +58,62 @@
         "preco": 1309.89,
         "imagem": "/assets/imagens/produtos/pc_gamer1.png",
         "marca": "Intel",
-        "processador":"i5",
+        "processador": "i5",
         "id": "8",
         "tag": "Computador"
+    },
+    {
+        "titulo": "PLACA DE VIDEO ASUS GEFORCE RTX TITAN, 12GB, GDDR6, 192-BIT, DUAL-RTX2060-12G-EVO",
+        "preco": 2099.99,
+        "imagem": "/assets/imagens/produtos/placadevideo1.png",
+        "id": "9",
+        "tag": "Hardware",
+        "tipo": "Placa de Video",
+        "serie": "RTX"
+    },
+    {
+        "titulo": "PLACA DE VIDEO ASUS GEFORCE RTX 2060 SUPER 8GB GDDR6 DUAL 256-BIT, DUAL-RTX2060S-8G-EVO-V2",
+        "preco": 2801.09,
+        "imagem": "/assets/imagens/produtos/placadevideo2.webp",
+        "id": "10",
+        "tag": "Hardware",
+        "tipo": "Placa de Video",
+        "serie": "RTX"
+    },
+    {
+        "titulo":"Placa de Vídeo Galax NVIDIA GeForce GTX 1630 EX (1-Click OC), 4GB, GDDR6 - 63NQL4HP66EX",
+        "preco":1909.89,
+        "imagem":"/assets/imagens/produtos/placadevideo3.png",
+        "id":"11",
+        "tag":"Hardware",
+        "tipo":"Placa de Video",
+        "serie":"GTX"
+    },
+    {
+        "titulo": "PLACA DE VIDEO GEFORCE GTX 1660 SUPER GAMING OC 6GB 192 BIT, GV-N166SGAMING OC-6GD",
+        "preco": 2101.99,
+        "imagem":"/assets/imagens/produtos/placadevideo4.png",
+        "id":"12",
+        "tag":"Hardware",
+        "tipo":"Placa de Video",
+        "serie":"GTX"
+    },
+    {
+        "titulo": "PROCESSADOR INTEL CORE I5-13400, 10-CORE, 16-THREADS, 2.5GHZ (4.6GHZ), CACHE 20MB, LGA1700, BX8071513400",
+        "preco": 1799.99,
+        "imagem":"/assets/imagens/produtos/corei5.png",
+        "id":"13",
+        "tag":"Hardware",
+        "tipo":"Processador",
+        "serie":"i5"
+    },    
+    {
+        "titulo": "PROCESSADOR INTEL CORE I5-8500, 6-CORE, 6-THREADS, 3GHZ (4.1GHZ TURBO), 9MB CACHE, LGA1151, BX80684I58500-TRAY",
+        "preco": 960.00,
+        "imagem":"/assets/imagens/produtos/corei52.png",
+        "id":"14",
+        "tag":"Hardware",
+        "tipo":"Processador",
+        "serie":"i5"
     }
 ]
