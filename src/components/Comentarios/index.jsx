@@ -1,5 +1,5 @@
 import Comentario from './Comentario'
-import FazerComentario from '../FazerComentario'
+import FazerComentario from './FazerComentario'
 import styles from './Comentarios.module.scss'
 import { useComentariosContext } from '../../common/contexts/Comentarios'
 import { useParams } from 'react-router-dom'

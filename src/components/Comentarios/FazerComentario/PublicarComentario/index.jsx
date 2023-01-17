@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useComentariosContext } from '../../../common/contexts/Comentarios'
-import { useUserContext } from '../../../common/contexts/User'
-import getDataHoraAtual from '../../../common/functions/DataHorario/getDataHoraAtual'
-import fazerSigla from '../../../common/functions/Formatacao/fazerSigla'
-import Comentario from '../../Comentarios/Comentario'
+import { useComentariosContext } from '../../../../common/contexts/Comentarios'
+import { useUserContext } from '../../../../common/contexts/User'
+import getDataHoraAtual from '../../../../common/functions/DataHorario/getDataHoraAtual'
+import fazerSigla from '../../../../common/functions/Formatacao/fazerSigla'
+import Comentario from '../../../Comentarios/Comentario'
 import styles from './PublicarComentario.module.scss'
 
 export default function PublicarComentario() {

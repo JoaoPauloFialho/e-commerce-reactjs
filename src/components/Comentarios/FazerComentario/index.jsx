@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import { useUserContext } from '../../common/contexts/User'
-import BotaoFacaUmaAvaliacao from './BotaoFacaUmaAvaliacao'
-import Login from '../Login'
+import { useUserContext } from '../../../common/contexts/User'
+import Login from '../../Login'
 import styles from './FazerComentario.module.scss'
-import { useComentariosContext } from '../../common/contexts/Comentarios'
-import getDataHoraAtual from '../../common/functions/DataHorario/getDataHoraAtual'
-import Comentario from '../Comentarios/Comentario'
+import { useComentariosContext } from '../../../common/contexts/Comentarios'
+import Comentario from '../Comentario'
 import PublicarComentario from './PublicarComentario'
 import { useParams } from 'react-router-dom'
 
@@ -19,6 +17,12 @@ export default function FazerComentario() {
             return comentario.usuario === user.usuario && comentario.id === produtoId.id}
         )[0]
         console.log(comentarioUser)
+
+    //esse trecho do código está meio que parecido com o comentarioUser pois estou usando ele somente
+    //para saber a quantidade de comentários do produto
+    const comentariosProduto = comentarios.filter(
+        comentario => comentario.id === produtoId.id
+    )
 
     let userComentario = comentarioUser ?
         <div className={styles.user_comentario}>
@@ -35,7 +39,7 @@ export default function FazerComentario() {
     return (
         <div className={styles.container}>
             <span className={styles.container__avaliacoes_span}>
-                <p>0 avaliações</p>
+                <p>{comentariosProduto.length} avaliações</p>
             </span>
             {user ? <PublicarComentario/> : naoLogado}
         </div>
