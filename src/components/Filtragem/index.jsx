@@ -12,13 +12,12 @@ export default function Filtragem(props) {
 
     useEffect(() =>{
         if(props.tag === "Computador") setFiltragem(<FiltragemComputador produtos={produtos}/>)
-    }, [produtos])
+    }, [])
     
 
     return (
         <section className={styles.filtragem_produtos}>
             {filtragem}
-
         </section>
     )
 }

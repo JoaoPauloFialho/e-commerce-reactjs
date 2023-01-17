@@ -5,8 +5,14 @@ import styles from './FiltragemComputador.module.scss'
 export default function FiltragemComputador(props) {
     const produtosIniciais = props.produtos
     const [produtos, setProdutos] = useState(props.produtos)
-    const maiorPreco = props.produtos.reduce((acum, produto) => acum.preco > produto.preco ? acum : produto).preco
-    const menorPreco = props.produtos.reduce((acum, produto) => acum.preco < produto.preco ? acum : produto).preco
+
+    const maiorPreco = props.produtos.reduce(
+        (acum, produto) => acum.preco > produto.preco ? acum : produto
+    ).preco
+    const menorPreco = props.produtos.reduce(
+        (acum, produto) => acum.preco < produto.preco ? acum : produto
+    ).preco
+
     const [preco, setPreco] = useState(maiorPreco)
     const [marca, setMarca] = useState('Todos')
     const [processador, setProcessador] = useState('Todos')
@@ -15,43 +21,29 @@ export default function FiltragemComputador(props) {
     const marcas = [...new Set(produtosIniciais.map(produto => produto.marca))]
     const processadores = [...new Set(produtosIniciais.map(produto => produto.processador))]
 
+    //sempre que ocorre mudanças nos filtros os produtos são renderizados novamente
+    useEffect(() => {
+        let novosProdutos = produtosIniciais
+        novosProdutos = novosProdutos.filter(produto => produto.preco <= preco)
+        if (marca !== "Todos") novosProdutos = novosProdutos.filter(
+            produto => produto.marca === marca
+        )
+        if (processador !== "Todos") novosProdutos = novosProdutos.filter(
+            produto => produto.processador === processador
+        )
+        setProdutos(novosProdutos)
+    }, [preco, marca, processador])
 
     function aoMudarPreco(preco) {
-        setPreco(prevPreco => preco)
-        setProdutos(props.produtos.filter(produto => produto.preco <= preco))
+        setPreco(preco)
     }
 
     function aoMudarMarca(marca) {
-
         setMarca(marca)
-        if (marca === "Todos") {
-            //se a marca for todos ele mostra de acordo com o processador
-            //se o processador for todos tbm ele mostra todos os produtos
-            if (processador === "Todos") return setProdutos(
-                produtosIniciais.filter(produto => produto.processador !== processador)
-            )
-            return setProdutos(produtosIniciais.filter(produto => produto.processador === processador))
-        }
-        //se a marca não for todos ele filtra os produtos
-        return setProdutos(
-            props.produtos.filter(produto => produto.marca === marca)
-        )
     }
 
     function aoMudarProcessador(processador) {
         setProcessador(processador)
-        if (processador === "Todos") {
-            console.log(processador)
-            //segue a mesma lógica do filtro de marcas ali em cima
-            if (marca === "Todos") return setProdutos(produtosIniciais.filter(
-                produto => produto.marca !== marca
-            ))
-            console.log(marca)
-            return setProdutos(produtosIniciais.filter(produto => produto.marca === marca))
-        }
-        return setProdutos(
-            props.produtos.filter(produto => produto.processador === processador
-            ))
     }
 
     return (
@@ -94,7 +86,10 @@ export default function FiltragemComputador(props) {
                     </select>
                 </span>
             </div>
-            <Produtos produtos={produtos} />
+            {produtos.length > 0 ?
+                <Produtos produtos={produtos} /> :
+                <p className={styles.sem_produtos}>Nenhum produto encontrado</p>
+            }
         </>
     )
 }
