@@ -76,8 +76,7 @@
         "preco": 2099.99,
         "imagem": "/assets/imagens/produtos/placadevideo1.png",
         "id": "9",
-        "tag": "Hardware",
-        "tipo": "Placa de Video",
+        "tag": "Placa de Video",
         "serie": "RTX"
     },
     {
@@ -85,8 +84,7 @@
         "preco": 2801.09,
         "imagem": "/assets/imagens/produtos/placadevideo2.webp",
         "id": "10",
-        "tag": "Hardware",
-        "tipo": "Placa de Video",
+        "tag": "Placa de Video",
         "serie": "RTX"
     },
     {
@@ -94,8 +92,7 @@
         "preco":1909.89,
         "imagem":"/assets/imagens/produtos/placadevideo3.png",
         "id":"11",
-        "tag":"Hardware",
-        "tipo":"Placa de Video",
+        "tag":"Placa de Video",
         "serie":"GTX"
     },
     {
@@ -103,8 +100,7 @@
         "preco": 2101.99,
         "imagem":"/assets/imagens/produtos/placadevideo4.png",
         "id":"12",
-        "tag":"Hardware",
-        "tipo":"Placa de Video",
+        "tag":"Placa de Video",
         "serie":"GTX"
     },
     {
@@ -112,8 +108,7 @@
         "preco": 1799.99,
         "imagem":"/assets/imagens/produtos/corei5.png",
         "id":"13",
-        "tag":"Hardware",
-        "tipo":"Processador",
+        "tag":"Processador",
         "serie":"i5"
     },    
     {
@@ -121,8 +116,7 @@
         "preco": 960.00,
         "imagem":"/assets/imagens/produtos/corei52.png",
         "id":"14",
-        "tag":"Hardware",
-        "tipo":"Processador",
+        "tag":"Processador",
         "serie":"i5"
     },
     {
@@ -135,5 +129,38 @@
         "tag":"Computador",
         "id":"15",
         "imagem":"/assets/imagens/produtos/pcgamerryzen.png"
+    },
+    {
+        "titulo":"Notebook Gamer Acer Nitro 5 AN517-54-59KR Intel Core i5 Linux Gutta 8GB 512GB SSD GTX 1650 17.3' FHD",
+        "id":"16",
+        "preco":4999.00,
+        "processador":"i5",
+        "placaDeVideo":"GTX",
+        "armazenamento":"SSD",
+        "ram":"8GB",
+        "tag":"Notebook",
+        "imagem":"/assets/imagens/produtos/notebookgamer.png"
+    },
+    {
+        "titulo":"Notebook Gamer Dell G15 G15-a0700-MM20P AMD Ryzen 7 5800H 15,6 16GB SSD 512 GB Windows 11 GeForce RTX 3060",
+        "id":"17",
+        "preco":7699.00,
+        "processador":"Ryzen 7",
+        "placaDeVideo":"RTX",
+        "armazenamento":"SSD",
+        "ram":"16GB",
+        "tag":"Notebook",
+        "imagem":"/assets/imagens/produtos/notebookgamer2.avif"
+    },
+    {
+        "titulo":"Notebook Acer Nitro 5 Intel Core i7-11800H, GeForce GTX 1650, 8GB RAM, SSD 512GB, 15.6 Full HD 144Hz IPS, Windows 11, Preto e Vermelho - AN515-57-740K",
+        "id":"18",
+        "preco":4899.99,
+        "processador":"i7",
+        "placaDeVideo":"GTX",
+        "armazenamento":"SSD",
+        "ram":"8GB",
+        "tag":"Notebook",
+        "imagem":"/assets/imagens/produtos/notebookgamer3.png"
     }
 ]

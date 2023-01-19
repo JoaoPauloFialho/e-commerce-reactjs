@@ -42,7 +42,7 @@ export default function FiltragemComputador(props) {
             produto => produto.armazenamento === armazenamento
         )
         setProdutos(novosProdutos)
-    }, [preco, marca, processador, placaDeVideo, armazenamento])
+    }, [preco, marca, processador, placaDeVideo, armazenamento, setProdutos])
 
     function aoMudarPreco(preco) {
         return setPreco(preco)

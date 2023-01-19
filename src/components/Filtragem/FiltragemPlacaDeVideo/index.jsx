@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Produtos from '../../Produtos'
-import styles from './FiltragemHardware.module.scss'
+import styles from './FiltragemPlacaDeVideo.module.scss'
 
 export default function FiltragemHardware(props) {
     const produtosIniciais = props.produtos
@@ -14,32 +14,23 @@ export default function FiltragemHardware(props) {
     ).preco
 
     const [preco, setPreco] = useState(maiorPreco)
-    const [tipo, setTipo] = useState('Todos')
     const [serie, setSerie] = useState('Todos')
     const metade = (maiorPreco / 2).toFixed(2)
 
-    const tipos = [...new Set(produtosIniciais.map(produto => produto.tipo))]
     const series = [...new Set(produtosIniciais.map(produto => produto.serie))]
 
     //sempre que ocorre mudanças nos filtros os produtos são renderizados novamente
     useEffect(() => {
         let novosProdutos = produtosIniciais
         novosProdutos = novosProdutos.filter(produto => produto.preco <= preco)
-        if (tipo !== "Todos") novosProdutos = novosProdutos.filter(
-            produto => produto.tipo === tipo
-        )
         if (serie !== "Todos") novosProdutos = novosProdutos.filter(
             produto => produto.serie === serie
         )
         setProdutos(novosProdutos)
-    }, [preco, tipo, serie, setProdutos])
+    }, [preco, serie, setProdutos])
 
     function aoMudarPreco(preco) {
         setPreco(preco)
-    }
-
-    function aoMudarTipo(tipo) {
-        setTipo(tipo)
     }
 
     function aoMudarserie(serie) {
@@ -64,16 +55,6 @@ export default function FiltragemHardware(props) {
                         />
                         <p className={styles.filtragem__precos__span__preco}>{maiorPreco}</p>
                     </span>
-                </span>
-                <span className={styles.filtragem__tipos}>
-                    <p className={styles.filtragem__tipos__titulo}>Tipo</p>
-                    <select
-                        onChange={event => aoMudarTipo(event.target.value)}
-                        defaultValue={'Todos'}
-                    >
-                        <option >Todos</option>
-                        {tipos.map(tipos => <option>{tipos}</option>)}
-                    </select>
                 </span>
                 <span className={styles.filtragem__series}>
                     <p className={styles.filtragem__series__titulo}>Serie</p>

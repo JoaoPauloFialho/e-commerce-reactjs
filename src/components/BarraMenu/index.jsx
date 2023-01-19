@@ -28,7 +28,7 @@ export default function BarraMenu() {
                     Computadores
                 </BarraMenuCategoria>                
                 <BarraMenuCategoria
-                    subCategorias={["Processadores", "Placas de vídeo"]}
+                    subCategorias={["Processadores", "Placas de video"]}
                 >
                     Hardware
                 </BarraMenuCategoria>
