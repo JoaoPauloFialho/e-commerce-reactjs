@@ -1,0 +1,52 @@
+.conteiner{
+    display: flex;
+    align-items: center;
+}
+
+.nav{
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link_desativo{
+    font-size: 1.1rem;
+    color: grey;
+    text-decoration: none;
+}
+
+.imagem_seta{
+    width: 1rem;
+    margin-left: 0.3rem;
+    transition: 0.2s;
+}
+
+.imagem_seta_rotacionado{
+    transform: rotate(180deg);
+}
+
+.menu_ativo{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    background-color: black;
+    padding: 0.5rem;
+    top: 9.2rem;
+
+    a{
+        color: grey;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: white;
+    }
+}
+
+.menu_desativo{
+    position: absolute;
+    top: -100rem;
+}

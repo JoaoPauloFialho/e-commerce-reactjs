@@ -7,8 +7,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+
+    .link_desativo{
+        font-size: 1.1rem;
+        color: grey;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: white;
+    }
 }
 
 .menu{
@@ -89,4 +97,10 @@
     color: white;
     transition: 0.5s;
     font-size: 1.1rem;
+}
+
+.link_ativo{
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
 }

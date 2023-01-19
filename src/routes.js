@@ -13,7 +13,7 @@ import { ComentariosContextProvider } from "./common/contexts/Comentarios";
 import LoginPage from "./pages/LoginPage";
 import CadastroPage from "./pages/CadastroPage";
 import PaginaTemplateLoginCadastro from "./pages/PaginaTemplateLoginCadastro";
-import ComputadoresPage from "./pages/ComputadoresPage";
+import ComputadoresPage from "./pages/DesktopsPage";
 import HardwarePage from "./pages/HardwarePage";
 
 export default function AppRoutes() {
@@ -28,10 +28,10 @@ export default function AppRoutes() {
               <Routes>
                 <Route path="/" element={<PaginaTemplate />}>
                   <Route index element={<Home />} />
-                  <Route path='produtos' element={<OfertasPage />} />
+                  <Route path='ofertas' element={<OfertasPage />} />
                   <Route path='produto/:id/' element={<ProdutoComprar />} />
                   <Route path="carrinho" element={<Carrinho />} />
-                  <Route path="computadores" element={<ComputadoresPage />} />
+                  <Route path="desktops" element={<ComputadoresPage />} />
                   <Route path="hardware" element={<HardwarePage />} />
                 </Route>
 

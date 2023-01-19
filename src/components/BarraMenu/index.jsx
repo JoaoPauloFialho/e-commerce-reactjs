@@ -1,40 +1,48 @@
-import { Component } from 'react';
+import { Component, useEffect, useState } from 'react';
 import styles from './BarraMenu.module.scss';
 import lupa from './lupa.png';
-import menu from './menu.png';
+import menu_icone from './menu.png';
 import Menu from './Menu';
+import { Link, useLocation } from 'react-router-dom';
+import BarraMenuCategoria from './BarraMenuCategoria';
 
-export default class BarraMenu extends Component{
+export default function BarraMenu() {
+    const [menu, setMenu] = useState()
+    const localizacao = useLocation()
 
-    state = {
-        mostrar_menu : false,
-    }
-    
-    constructor(props){
-        super(props)
-        this.mostrarMenu = this.mostrarMenu.bind(this)
-    }
-
-    mostrarMenu(e){
-        if(!this.state.mostrar_menu){
-            this.setState({mostrar_menu : true})
-            return
-        }
-        this.setState({mostrar_menu : false})
+    function mostrarMenu(e) {
+        setMenu(prevMenu => !prevMenu)
     }
 
-    render(){
-        return(
-            <>
-                <section className={styles.barra_menu}>
-                    <img onClick={e => this.mostrarMenu(e)} className={styles.menu} src={menu} alt="icone de menu" />
-                    <div className={styles.pesquisa}>
-                        <input type='text' className={styles.pesquisa_texto} placeholder='Pesquisar Produtos'/>
-                        <img  className={styles.imagem_lupa} src={lupa} alt='lupa de pesquisa'/>
-                    </div>
-                </section>
-                {this.state.mostrar_menu && <Menu/>}
-            </>
-        )
-    }
+    return (
+        <>
+            <section className={styles.barra_menu}>
+                <img onClick={e => mostrarMenu(e)} className={styles.menu} src={menu_icone} alt="icone de menu" />
+                <Link className={styles.link_ativo}
+                    to={"ofertas"}>
+                    Ofertas
+                </Link>
+                <BarraMenuCategoria
+                    subCategorias={["Notebooks", "Desktops"]}
+                >
+                    Computadores
+                </BarraMenuCategoria>                
+                <BarraMenuCategoria
+                    subCategorias={["Processadores", "Placas de vídeo"]}
+                >
+                    Hardware
+                </BarraMenuCategoria>
+                <BarraMenuCategoria
+                    subCategorias={["Consoles", "Acessórios"]}
+                >
+                    Eletronicos
+                </BarraMenuCategoria>
+                <div className={styles.pesquisa}>
+                    <input type='text' className={styles.pesquisa_texto} placeholder='Pesquisar Produtos' />
+                    <img className={styles.imagem_lupa} src={lupa} alt='lupa de pesquisa' />
+                </div>
+            </section>
+            {menu && <Menu />}
+        </>
+    )
 }

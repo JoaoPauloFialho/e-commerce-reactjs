@@ -5,6 +5,9 @@
         "imagem": "/assets/imagens/produtos/pc_gamer1.png",
         "id": "1",
         "tag": "Computador",
+        "armazenamento": "SSD",
+        "placaDeVideo": "GTX",
+        "ram": "8GB",
         "marca": "Intel",
         "processador": "i3"
     },
@@ -41,7 +44,10 @@
         "titulo": "Intel i5-12400F, GeForce RTX 3070 TI 8GB, 16GB DDR4, SSD M.2 480GB",
         "preco": 11272.32,
         "imagem": "/assets/imagens/produtos/pc_gamer3.png",
+        "placaDeVideo": "RTX",
+        "armazenamento":"SSD",
         "marca": "Intel",
+        "ram":"8GB",
         "processador": "i5",
         "id": "6",
         "tag": "Computador"
@@ -54,11 +60,14 @@
         "tag": "Acessorio"
     },
     {
-        "titulo": "Processador Intel Core i5-12400, 6-Core, 12-Threads, 2.5GHz (4.4GHz Turbo), Cache 18MB, LGA1700, BX8071512400",
+        "titulo": "Intel Core i5-12400, 6-Core, 4GB, HD 120gb",
         "preco": 1309.89,
         "imagem": "/assets/imagens/produtos/pc_gamer1.png",
         "marca": "Intel",
+        "armazenamento":"HD",
+        "placaDeVideo": "Integrada",
         "processador": "i5",
+        "ram": "4GB",
         "id": "8",
         "tag": "Computador"
     },
@@ -115,5 +124,16 @@
         "tag":"Hardware",
         "tipo":"Processador",
         "serie":"i5"
+    },
+    {
+        "titulo": "AMD Ryzen 5 5600G, 8GB, DDR4, 2666mhz, Radeon Vega 7 Graphics, SSD 240GB, Windows 10, Preto",
+        "preco":2357.52,
+        "marca": "Acer",
+        "processador":"Ryzen 5",
+        "placaDeVideo":"Integrada",
+        "armazenamento":"SSD",
+        "tag":"Computador",
+        "id":"15",
+        "imagem":"/assets/imagens/produtos/pcgamerryzen.png"
     }
 ]

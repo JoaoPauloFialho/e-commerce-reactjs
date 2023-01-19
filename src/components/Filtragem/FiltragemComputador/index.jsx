@@ -16,10 +16,14 @@ export default function FiltragemComputador(props) {
     const [preco, setPreco] = useState(maiorPreco)
     const [marca, setMarca] = useState('Todos')
     const [processador, setProcessador] = useState('Todos')
+    const [placaDeVideo, setPlacaDeVideo] = useState('Todos')
+    const [armazenamento, setArmazenamento] = useState('Todos')
     const metade = (maiorPreco / 2).toFixed(2)
 
     const marcas = [...new Set(produtosIniciais.map(produto => produto.marca))]
     const processadores = [...new Set(produtosIniciais.map(produto => produto.processador))]
+    const placas = [...new Set(produtosIniciais.map(produto => produto.placaDeVideo))]
+    const armazenamentos = [...new Set(produtosIniciais.map(produto => produto.armazenamento))]
 
     //sempre que ocorre mudanças nos filtros os produtos são renderizados novamente
     useEffect(() => {
@@ -31,19 +35,33 @@ export default function FiltragemComputador(props) {
         if (processador !== "Todos") novosProdutos = novosProdutos.filter(
             produto => produto.processador === processador
         )
+        if (placaDeVideo !== "Todos") novosProdutos = novosProdutos.filter(
+            produto => produto.placaDeVideo === placaDeVideo
+        )
+        if (armazenamento !== "Todos") novosProdutos = novosProdutos.filter(
+            produto => produto.armazenamento === armazenamento
+        )
         setProdutos(novosProdutos)
-    }, [preco, marca, processador])
+    }, [preco, marca, processador, placaDeVideo, armazenamento])
 
     function aoMudarPreco(preco) {
-        setPreco(preco)
+        return setPreco(preco)
     }
 
     function aoMudarMarca(marca) {
-        setMarca(marca)
+        return setMarca(marca)
     }
 
     function aoMudarProcessador(processador) {
-        setProcessador(processador)
+        return setProcessador(processador)
+    }
+
+    function aoMudarPlacaDeVideo(placaDeVideo){
+        return setPlacaDeVideo(placaDeVideo)
+    }
+
+    function aoMudarArmazenamento(armazenamento){
+        return setArmazenamento(armazenamento)
     }
 
     return (
@@ -83,6 +101,26 @@ export default function FiltragemComputador(props) {
                     >
                         <option >Todos</option>
                         {processadores.map(marca => <option>{marca}</option>)}
+                    </select>
+                </span>                
+                <span className={styles.filtragem__processadores}>
+                    <p className={styles.filtragem__processadores__titulo}>Placas de Video</p>
+                    <select
+                        onChange={event => aoMudarPlacaDeVideo(event.target.value)}
+                        defaultValue={'Todos'}
+                    >
+                        <option >Todos</option>
+                        {placas.map(marca => <option>{marca}</option>)}
+                    </select>
+                </span>                
+                <span className={styles.filtragem__processadores}>
+                    <p className={styles.filtragem__processadores__titulo}>Armazenamento</p>
+                    <select
+                        onChange={event => aoMudarArmazenamento(event.target.value)}
+                        defaultValue={'Todos'}
+                    >
+                        <option >Todos</option>
+                        {armazenamentos.map(armazenamento => <option>{armazenamento}</option>)}
                     </select>
                 </span>
             </div>
