@@ -18,6 +18,7 @@ import HardwarePage from "./pages/HardwarePage";
 import NotebookPage from "./pages/NotebookPage";
 import PlacaDeVideoPage from "./pages/PlacaDeVideoPage";
 import ProcessadorPage from './pages/ProcessadorPage';
+import Pesquisa from "./pages/Pesquisa";
 
 export default function AppRoutes() {
   return (
@@ -37,8 +38,9 @@ export default function AppRoutes() {
                   <Route path="desktops" element={<ComputadoresPage />} />
                   <Route path="notebooks" element={<NotebookPage />} />
                   <Route path="hardware" element={<HardwarePage />} />
-                  <Route path="placas de video" element={<PlacaDeVideoPage/>}/>
-                  <Route path="processadores" element={<ProcessadorPage/>}/>
+                  <Route path="placas de video" element={<PlacaDeVideoPage />} />
+                  <Route path="processadores" element={<ProcessadorPage />} />
+                  <Route path="pesquisa/:pesquisa/" element={<Pesquisa />} />
                 </Route>
 
                 <Route path="/user" element={<PaginaTemplateLoginCadastro />}>

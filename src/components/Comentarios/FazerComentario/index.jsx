@@ -16,7 +16,6 @@ export default function FazerComentario() {
         comentario =>{
             return comentario.usuario === user.usuario && comentario.id === produtoId.id}
         )[0]
-        console.log(comentarioUser)
 
     //esse trecho do código está meio que parecido com o comentarioUser pois estou usando ele somente
     //para saber a quantidade de comentários do produto

@@ -26,28 +26,6 @@
     cursor: pointer;
 }
 
-.pesquisa{
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 10px;
-    height: 1.5rem;
-    margin-right: 1rem;
-}
-
-.pesquisa_texto{
-    background-color: transparent;
-    border: none;
-    color: white;
-}
-
-.imagem_lupa{
-    width: 1rem;
-    margin-right: 0.1rem;
-    cursor: pointer;
-}
-
 .menu_lateral{
     background-color: var(--cor-primaria);
     width: 10rem;

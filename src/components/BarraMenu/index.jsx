@@ -1,10 +1,10 @@
 import { Component, useEffect, useState } from 'react';
 import styles from './BarraMenu.module.scss';
-import lupa from './lupa.png';
 import menu_icone from './menu.png';
 import Menu from './Menu';
 import { Link, useLocation } from 'react-router-dom';
 import BarraMenuCategoria from './BarraMenuCategoria';
+import Pesquisa from './Pesquisa';
 
 export default function BarraMenu() {
     const [menu, setMenu] = useState()
@@ -37,10 +37,7 @@ export default function BarraMenu() {
                 >
                     Eletronicos
                 </BarraMenuCategoria>
-                <div className={styles.pesquisa}>
-                    <input type='text' className={styles.pesquisa_texto} placeholder='Pesquisar Produtos' />
-                    <img className={styles.imagem_lupa} src={lupa} alt='lupa de pesquisa' />
-                </div>
+                <Pesquisa/>
             </section>
             {menu && <Menu />}
         </>

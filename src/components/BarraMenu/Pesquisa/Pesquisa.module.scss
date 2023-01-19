@@ -1,0 +1,28 @@
+.pesquisa {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 1.6rem;
+    margin-right: 1rem;
+
+    &__texto {
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+
+    &__botao {
+        background-color: black;
+        border-radius: 360px;
+
+        &__imagem {
+            border-left: 1px solid grey;
+            padding-left: 0.3rem;
+            width: 1rem;
+            margin-right: 0.1rem;
+            cursor: pointer;
+        }
+    }
+}

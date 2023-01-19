@@ -1,0 +1,16 @@
+.conteiner {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__titulo {
+        display: flex;
+        column-gap: 14rem;
+        p {
+            font-size: 1.4rem;
+            color: white;
+        }
+    }
+}
