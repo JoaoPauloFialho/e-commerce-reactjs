@@ -1,0 +1,124 @@
+.filtragem {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+
+    &__precos {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        &__span {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+
+            input[type=range] {
+                -webkit-appearance: none;
+                background: var(--cor-secundaria);
+                height: 0.3rem;
+                border-radius: 3rem;
+                outline: none;
+            }
+
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 1rem;
+                height: 1rem;
+                background-color: white;
+                border-radius: 3rem;
+                cursor: pointer;
+
+            }
+
+            &__preco {
+                color: white;
+                font-size: 0.7rem;
+            }
+
+        }
+
+        &__preco_atual {
+            margin-bottom: -0.5rem;
+            font-size: 0.7rem;
+            color: white;
+        }
+
+        &__titulo {
+            margin-bottom: -0.2rem;
+            color: white;
+            font-size: 1.2rem;
+
+        }
+    }
+
+    &__marcas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__titulo {
+            margin-bottom: 1rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+
+        }
+
+        select {
+            width: 5rem;
+            height: 1.6rem;
+            font-size: 1.1rem;
+            user-select: none;
+            cursor: pointer;
+            background: var(--cor-secundaria);
+            border: solid 1px rgb(39, 39, 39);
+            color: white;
+            font-weight: 100;
+        }
+
+        option {
+            cursor: pointer;
+        }
+    }
+    
+    &__processadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__titulo {
+            margin-bottom: 1rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+
+        }
+
+        select {
+            width: 5rem;
+            height: 1.6rem;
+            font-size: 1.1rem;
+            user-select: none;
+            cursor: pointer;
+            background: var(--cor-secundaria);
+            border: solid 1px rgb(39, 39, 39);
+            color: white;
+            font-weight: 100;
+        }
+
+        option {
+            cursor: pointer;
+        }
+    }
+}
+
+.sem_produtos{
+    font-size: 2rem;
+    margin-top: 8rem;
+    color: white;
+    font-weight: bold;
+}

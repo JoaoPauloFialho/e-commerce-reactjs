@@ -15,6 +15,7 @@ import CadastroPage from "./pages/CadastroPage";
 import PaginaTemplateLoginCadastro from "./pages/PaginaTemplateLoginCadastro";
 import ComputadoresPage from "./pages/DesktopsPage";
 import HardwarePage from "./pages/HardwarePage";
+import NotebookPage from "./pages/NotebookPage";
 
 export default function AppRoutes() {
   return (
@@ -32,6 +33,7 @@ export default function AppRoutes() {
                   <Route path='produto/:id/' element={<ProdutoComprar />} />
                   <Route path="carrinho" element={<Carrinho />} />
                   <Route path="desktops" element={<ComputadoresPage />} />
+                  <Route path="notebooks" element={<NotebookPage />} />
                   <Route path="hardware" element={<HardwarePage />} />
                 </Route>
 
