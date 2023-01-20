@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 
 export default function Pesquisa() {
     const [produtos, setProdutos] = useState(dadosBrutos)
+    const [termoValido, setTermoValido] = useState(true)
 
     //parametros de pesquisa já divididos em lista
     const parametros = useParams().pesquisa.toLowerCase()
@@ -32,9 +33,7 @@ export default function Pesquisa() {
 
     //função para realizar a procura de um termo em uma string
     function temTermo(string, termo) {
-        console.log(string)
-        console.log(termo)
-        if (string.indexOf(termo) != -1) return true
+        if (string.indexOf(termo) !== -1) return true
         return false
     }
 
@@ -42,6 +41,7 @@ export default function Pesquisa() {
         const tag = achaTag(parametrosLista)
         let termos = parametrosLista
         let novosProdutos = dadosBrutos
+        let filtragemAnterior
 
         //se existir alguma tag nos parametros de pesquisa eu filtro os produtos de acordo com a tag
         if (tag) {
@@ -50,9 +50,26 @@ export default function Pesquisa() {
 
         //faz um busca com todos os termos
         for (let termo of termos) {
-            if (termo != tag) novosProdutos = novosProdutos.filter(
-                produto => temTermo(juntaMinusculo(produto.titulo), termo)
-            )
+            filtragemAnterior = novosProdutos
+
+            if (termo !== tag) {
+                novosProdutos = novosProdutos.filter(
+                    produto => {
+                        if (
+                            temTermo(juntaMinusculo(produto.titulo), termo) && produto.tag.toLowerCase() === tag
+                        ) return true
+                        setTermoValido(prevTermo => !prevTermo)
+                    }
+                )
+            }
+            
+            //se o novosProdutos tiver tamanho 0 e a filtragem anterior não 
+            //significa que teve um erro na filtragem então eu só faço o novosProdutos receberem o valor
+            //de filtragemAnterior
+            if (novosProdutos.length === 0 && filtragemAnterior.length !== 0) {
+                novosProdutos = filtragemAnterior
+                break
+            }
         }
         setProdutos(novosProdutos)
     }, [])
