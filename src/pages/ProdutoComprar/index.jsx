@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import styles from './ProdutoCompra.module.scss'
 import logoPix from './logo_pix.png'
 import logoLoja from './logo_icon.png'
@@ -16,12 +16,18 @@ export default function ProdutoComprar() {
     const produtoId = useParams();
     const produtoPag = produtos.find(produto => produto.id === produtoId['id'])
     const precoFloat = precoStringParaFloat(produtoPag.preco)
+    const nav = useNavigate()
     const { adicionarProdutoNoCarrinho } = useCarrinhoContext()
 
     //para que a página seja scrollada para o topo sempre que a página for carregada
     useEffect(() => {
         window.scroll(0, 100)
     }, [])
+
+    function aoClicar(){
+        nav('/carrinho')
+        adicionarProdutoNoCarrinho(produtoPag)
+    }
 
     return (
         <>
@@ -46,14 +52,13 @@ export default function ProdutoComprar() {
                             R$ {conversaoPreco((precoFloat - (precoFloat * 0.10)).toFixed(2))} pagando com PIX {`(-10%)`}
                         </p>
                     </span>
-                    <Link
-                        to={'/carrinho'}
-                        onClick={() => adicionarProdutoNoCarrinho(produtoPag)}
+                    <span
+                        onClick={() => aoClicar()}
                         className={styles.produto_pagina__informacoes__botao_compra}
                     >
                         <p style={{ color: 'white' }}>Comprar</p>
                         <img src={logoLoja} alt="imagem carrinho" />
-                    </Link>
+                    </span>
                     <FreteGarantia />
                 </span>
             </section>
