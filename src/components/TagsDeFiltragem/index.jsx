@@ -10,8 +10,10 @@ export default function TagsDeFiltragem(props) {
 
     const tags = [
         'Computador',
+        'Notebook',
         'Cadeira',
-        'Hardware',
+        'Processador',
+        'Placa de Video',
         'Acessorio',
         'Monitor',
     ]
