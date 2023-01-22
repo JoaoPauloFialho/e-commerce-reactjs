@@ -14,13 +14,11 @@ export default function FiltragemNotebook(props) {
     ).preco
 
     const [preco, setPreco] = useState(maiorPreco)
-    const [marca, setMarca] = useState('Todos')
     const [processador, setProcessador] = useState('Todos')
     const [placaDeVideo, setPlacaDeVideo] = useState('Todos')
     const [armazenamento, setArmazenamento] = useState('Todos')
     const metade = (maiorPreco / 2).toFixed(2)
 
-    const marcas = [...new Set(produtosIniciais.map(produto => produto.marca))]
     const processadores = [...new Set(produtosIniciais.map(produto => produto.processador))]
     const placas = [...new Set(produtosIniciais.map(produto => produto.placaDeVideo))]
     const armazenamentos = [...new Set(produtosIniciais.map(produto => produto.armazenamento))]
@@ -29,9 +27,6 @@ export default function FiltragemNotebook(props) {
     useEffect(() => {
         let novosProdutos = produtosIniciais
         novosProdutos = novosProdutos.filter(produto => produto.preco <= preco)
-        if (marca !== "Todos") novosProdutos = novosProdutos.filter(
-            produto => produto.marca === marca
-        )
         if (processador !== "Todos") novosProdutos = novosProdutos.filter(
             produto => produto.processador === processador
         )
@@ -42,14 +37,10 @@ export default function FiltragemNotebook(props) {
             produto => produto.armazenamento === armazenamento
         )
         setProdutos(novosProdutos)
-    }, [preco, marca, processador, placaDeVideo, armazenamento])
+    }, [preco, processador, placaDeVideo, armazenamento])
 
     function aoMudarPreco(preco) {
         return setPreco(preco)
-    }
-
-    function aoMudarMarca(marca) {
-        return setMarca(marca)
     }
 
     function aoMudarProcessador(processador) {
@@ -82,16 +73,6 @@ export default function FiltragemNotebook(props) {
                         />
                         <p className={styles.filtragem__precos__span__preco}>{maiorPreco}</p>
                     </span>
-                </span>
-                <span className={styles.filtragem__marcas}>
-                    <p className={styles.filtragem__marcas__titulo}>Marcas</p>
-                    <select
-                        onChange={event => aoMudarMarca(event.target.value)}
-                        defaultValue={'Todos'}
-                    >
-                        <option >Todos</option>
-                        {marcas.map(marca => <option>{marca}</option>)}
-                    </select>
                 </span>
                 <span className={styles.filtragem__processadores}>
                     <p className={styles.filtragem__processadores__titulo}>Processadores</p>
