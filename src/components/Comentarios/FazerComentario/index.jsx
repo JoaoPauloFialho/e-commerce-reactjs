@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom'
 
 export default function FazerComentario() {
     const { user } = useUserContext()
-    const { comentarios } = useComentariosContext()
+    const { comentarios, mediaAvaliacao } = useComentariosContext()
     const [cancelar, setCancelar] = useState(false)
     const produtoId = useParams()
     const comentarioUser = comentarios.filter(
@@ -38,6 +38,7 @@ export default function FazerComentario() {
     return (
         <div className={styles.container}>
             <span className={styles.container__avaliacoes_span}>
+                <p>{mediaAvaliacao(produtoId.id)} estrelas de 5</p>
                 <p>{comentariosProduto.length} avaliações</p>
             </span>
             {user ? <PublicarComentario/> : naoLogado}

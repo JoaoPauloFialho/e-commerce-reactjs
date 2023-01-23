@@ -24,6 +24,7 @@ export default function Comentarios() {
                     nome={comentario.usuario}
                     dataHora={comentario.data}
                     texto={comentario.comentario}
+                    avaliacao={comentario.avaliacao}
                 />
             )}
         </section>
