@@ -5,11 +5,12 @@ import { useUserContext } from '../../common/contexts/User'
 import { useState } from 'react'
 
 export default function Cadastro() {
-    const { cadastrar, checaJaCadastrado} = useUserContext()
+    const { cadastrar, checaJaCadastrado } = useUserContext()
     const [senha, setSenha] = useState()
     const [confirmaSenha, setConfirmaSenha] = useState()
     const [usuario, setUsuario] = useState()
-    const [tipoInput, setTipoInput] = useState('password')
+    const [tipoInputSenha, setTipoInputSenha] = useState('password')
+    const [tipoInputRepetirSenha, setTipoInputRepetirSenha] = useState('password')
     const [senhasDiferentes, setSenhasDiferentes] = useState(false)
     const [senhaInválida, setSenhaInvalida] = useState(false)
 
@@ -24,8 +25,13 @@ export default function Cadastro() {
     }
 
     function mostrarSenha() {
-        if (tipoInput === 'password') return setTipoInput('text')
-        return setTipoInput('password')
+        if (tipoInputSenha === 'password') return setTipoInputSenha('text')
+        return setTipoInputSenha('password')
+    }
+
+    function mostrarRepetirSenha() {
+        if (tipoInputRepetirSenha === 'password') return setTipoInputRepetirSenha('text')
+        return setTipoInputRepetirSenha('password')
     }
 
     function validaSenha() {
@@ -69,25 +75,39 @@ export default function Cadastro() {
                         name='usuario'
                         type='text'
                         placeholder='Usuario'
+                        className={styles.usuario}
                     />
                     <input
                         onChange={(event) => aoMudarSenha(event)}
-                        name='senha' type={tipoInput}
+                        name='senha' type={tipoInputSenha}
                         placeholder='Senha'
+                        className={styles.senha}
+                    />
+                    <img onClick={() => mostrarSenha()}
+                        src={icone_olho}
+                        alt='mostrar senha'
+                        className={styles.senha_icone}
                     />
                     <input
                         onChange={(event) => aoMudarConfirmaSenha(event)}
                         name='senha'
-                        type={tipoInput}
+                        type={tipoInputRepetirSenha}
                         placeholder='Confirmar senha'
+                        className={styles.repetir_senha}
                     />
+                    <img
+                        className={styles.repetir_senha_icone}
+                        onClick={() => mostrarRepetirSenha()}
+                        src={icone_olho}
+                        alt='mostrar senha'
+                    />
+
                     {senhasDiferentes ?
                         senhasDiferentes : ''
                     }
                     {senhaInválida ?
                         senhaInválida : ''
                     }
-                    <img onClick={() => mostrarSenha()} src={icone_olho} alt='mostrar senha' />
                     <button onClick={() => cadastrar}>Cadastrar</button>
                 </form>
             </span>

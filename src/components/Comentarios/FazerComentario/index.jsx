@@ -13,9 +13,10 @@ export default function FazerComentario() {
     const [cancelar, setCancelar] = useState(false)
     const produtoId = useParams()
     const comentarioUser = comentarios.filter(
-        comentario =>{
-            return comentario.usuario === user.usuario && comentario.id === produtoId.id}
-        )[0]
+        comentario => {
+            return comentario.usuario === user.usuario && comentario.id === produtoId.id
+        }
+    )[0]
 
     //esse trecho do código está meio que parecido com o comentarioUser pois estou usando ele somente
     //para saber a quantidade de comentários do produto
@@ -27,7 +28,7 @@ export default function FazerComentario() {
         <div className={styles.user_comentario}>
             <p>Seu comentário</p>
             <Comentario nome={comentarioUser.usuario} dataHora={comentarioUser.data} texto={comentarioUser.comentario} />
-        </div> : <PublicarComentario/>
+        </div> : <PublicarComentario />
 
     let naoLogado =
         <div className={styles.user_login}>
@@ -38,10 +39,13 @@ export default function FazerComentario() {
     return (
         <div className={styles.container}>
             <span className={styles.container__avaliacoes_span}>
-                <p>{mediaAvaliacao(produtoId.id)} estrelas de 5</p>
+                <span className={styles.container__avaliacoes_span__media}>
+                    <p className={styles.container__avaliacoes_span__media__titulo}>Nota média</p>
+                    <p>{mediaAvaliacao(produtoId.id)} estrelas de 5</p>
+                </span>
                 <p>{comentariosProduto.length} avaliações</p>
             </span>
-            {user ? <PublicarComentario/> : naoLogado}
+            {user ? <PublicarComentario /> : naoLogado}
         </div>
     )
 }

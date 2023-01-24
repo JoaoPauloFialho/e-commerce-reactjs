@@ -22,11 +22,6 @@
             align-items: center;
             width: 20rem;
 
-            input {
-                height: 2rem;
-                width: 15rem;
-            }
-
             button {
                 cursor: pointer;
                 color: black;
@@ -72,4 +67,34 @@
 .erro{
     color: red;
     font-size: 0.7rem;
+}
+
+.repetir_senha_icone{
+    position: relative;
+    top: -2.34rem;
+    left: 14.5rem;
+}
+
+.senha_icone{
+    position: absolute;
+    top: 17.5rem;
+    left: 63.2rem;
+}
+
+.usuario{
+    width: 16.7rem;
+    height: 2rem;
+}
+
+.senha{ 
+    height: 2rem;
+    width: 15rem;
+    padding-right: 1.8rem;
+
+}
+.repetir_senha{ 
+    height: 2rem;
+    width: 15rem;
+    padding-right: 1.8rem;
+
 }
