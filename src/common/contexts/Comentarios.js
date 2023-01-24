@@ -67,7 +67,7 @@ export function useComentariosContext() {
             , 0)
 
         //para calcular a média é só dividir o total da avaliação pela quantidade de comentários
-        return avaliacoes/comentariosProduto.length
+        return (avaliacoes/comentariosProduto.length).toFixed(2)
     }
 
     return {

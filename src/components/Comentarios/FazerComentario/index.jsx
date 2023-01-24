@@ -41,7 +41,7 @@ export default function FazerComentario() {
             <span className={styles.container__avaliacoes_span}>
                 <span className={styles.container__avaliacoes_span__media}>
                     <p className={styles.container__avaliacoes_span__media__titulo}>Nota média</p>
-                    <p>{mediaAvaliacao(produtoId.id)} estrelas de 5</p>
+                    <p>{mediaAvaliacao(produtoId.id)} estrelas de 5.00</p>
                 </span>
                 <p>{comentariosProduto.length} avaliações</p>
             </span>
