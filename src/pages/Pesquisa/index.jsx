@@ -56,7 +56,7 @@ export default function Pesquisa() {
                 novosProdutos = novosProdutos.filter(
                     produto => {
                         if (
-                            temTermo(juntaMinusculo(produto.titulo), termo) && produto.tag.toLowerCase() === tag
+                            temTermo(juntaMinusculo(produto.titulo), termo) || produto.tag.toLowerCase() === tag
                         ) return true
                         setTermoValido(prevTermo => !prevTermo)
                     }
