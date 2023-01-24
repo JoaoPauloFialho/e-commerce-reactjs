@@ -54,15 +54,12 @@ export default function Pesquisa() {
 
             if (termo !== tag) {
                 novosProdutos = novosProdutos.filter(
-                    produto => {
-                        if (
-                            temTermo(juntaMinusculo(produto.titulo), termo) || produto.tag.toLowerCase() === tag
-                        ) return true
-                        setTermoValido(prevTermo => !prevTermo)
-                    }
+                    produto =>
+                        temTermo(juntaMinusculo(produto.titulo), termo)
+
                 )
             }
-            
+
             //se o novosProdutos tiver tamanho 0 e a filtragem anterior não 
             //significa que teve um erro na filtragem então eu só faço o novosProdutos receberem o valor
             //de filtragemAnterior
